@@ -39,16 +39,39 @@ function toggleF1Tab(tab,btn){
   document.getElementById(tab).classList.add('active');
 }
 
-/* ========== CONTACT FORM (improved UX) ========== */
+/* ========== CONTACT FORM ========== */
+// To activate: sign up free at formspree.io, create a form, and replace YOUR_FORM_ID below.
+var FORMSPREE_ID='xykbyywb';
 function handleContact(e){
   e.preventDefault();
   var btn=document.querySelector('.form-submit');
+  var form=document.getElementById('contact-form');
   btn.classList.add('loading');
   btn.textContent='Sending...';
-  setTimeout(function(){
-    document.getElementById('contact-form').style.display='none';
-    document.getElementById('contact-confirm').style.display='block';
-  },1200);
+  var data={
+    name:document.getElementById('name').value,
+    email:document.getElementById('email').value,
+    subject:document.getElementById('subject').value,
+    message:document.getElementById('message').value
+  };
+  fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify(data)
+  }).then(function(r){
+    if(r.ok){
+      form.style.display='none';
+      document.getElementById('contact-confirm').style.display='block';
+    } else {
+      btn.classList.remove('loading');
+      btn.textContent='Send Message';
+      alert('Something went wrong. Please email us at hello@sportvariety.org');
+    }
+  }).catch(function(){
+    btn.classList.remove('loading');
+    btn.textContent='Send Message';
+    alert('Network error. Please email us at hello@sportvariety.org');
+  });
 }
 
 /* ========== ESCAPE KEY — CLOSE MOBILE MENU ========== */
@@ -63,6 +86,17 @@ document.addEventListener('keydown',function(e){
   }
 });
 
+/* ========== ADSENSE — LOAD ONLY AFTER CONSENT ========== */
+function loadAdSense(){
+  if(document.querySelector('script[src*="adsbygoogle"]'))return;
+  var s=document.createElement('script');
+  s.async=true;
+  s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8747979755893623';
+  s.crossOrigin='anonymous';
+  document.head.appendChild(s);
+}
+if(localStorage.getItem('cookie-consent')==='accepted')loadAdSense();
+
 /* ========== COOKIE CONSENT BANNER ========== */
 (function(){
   if(localStorage.getItem('cookie-consent'))return;
@@ -73,6 +107,7 @@ document.addEventListener('keydown',function(e){
   setTimeout(function(){banner.classList.add('show')},500);
   banner.querySelector('.cookie-accept').addEventListener('click',function(){
     localStorage.setItem('cookie-consent','accepted');
+    loadAdSense();
     banner.classList.remove('show');
     setTimeout(function(){banner.remove()},300);
   });
