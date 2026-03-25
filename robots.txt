@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sportvariety.net/sitemap.xml
+Sitemap: https://sportvariety.org/sitemap.xml
