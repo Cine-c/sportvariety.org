@@ -86,17 +86,6 @@ document.addEventListener('keydown',function(e){
   }
 });
 
-/* ========== ADSENSE — LOAD ONLY AFTER CONSENT ========== */
-function loadAdSense(){
-  if(document.querySelector('script[src*="adsbygoogle"]'))return;
-  var s=document.createElement('script');
-  s.async=true;
-  s.src='https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8747979755893623';
-  s.crossOrigin='anonymous';
-  document.head.appendChild(s);
-}
-if(localStorage.getItem('cookie-consent')==='accepted')loadAdSense();
-
 /* ========== COOKIE CONSENT BANNER ========== */
 (function(){
   if(localStorage.getItem('cookie-consent'))return;
@@ -107,7 +96,6 @@ if(localStorage.getItem('cookie-consent')==='accepted')loadAdSense();
   setTimeout(function(){banner.classList.add('show')},500);
   banner.querySelector('.cookie-accept').addEventListener('click',function(){
     localStorage.setItem('cookie-consent','accepted');
-    loadAdSense();
     banner.classList.remove('show');
     setTimeout(function(){banner.remove()},300);
   });
