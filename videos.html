@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Videos — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Watch the best sports and motorsport video highlights. F1 races, car reviews, and more on Sport Variety.">
+<meta property="og:title" content="Videos — Sport Variety">
+<meta property="og:description" content="Watch the best sports and motorsport video highlights. F1 races, car reviews, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/videos.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/videos.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html" class="nav-active">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-videos">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Video <em>Highlights</em></div>
+    <p class="page-hero-sub">Race highlights, supercar reviews, match replays and more.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Videos</div>
+
+<div class="section">
+  <div class="score-tabs">
+    <button class="stab vid-filter-btn on" onclick="filterVids('all',this)">All</button>
+    <button class="stab vid-filter-btn" onclick="filterVids('f1',this)">F1</button>
+    <button class="stab vid-filter-btn" onclick="filterVids('cars',this)">Cars</button>
+    <button class="stab vid-filter-btn" onclick="filterVids('football',this)">Football</button>
+    <button class="stab vid-filter-btn" onclick="filterVids('basketball',this)">Basketball</button>
+  </div>
+
+  <div class="vid-page-grid">
+    <a href="https://www.youtube.com/watch?v=kGMp1Byuwto" target="_blank" rel="noopener" class="vid-card anim" data-cat="f1" style="text-decoration:none;color:var(--text)">
+      <div class="vid-card-thumb">
+        <img src="https://img.youtube.com/vi/kGMp1Byuwto/mqdefault.jpg" alt="F1 Italian GP">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Formula 1 — Official</div>
+        <h4>Race Highlights: 2025 Italian Grand Prix — Monza</h4>
+        <div class="vmeta-time">Verstappen wins from pole at the Temple of Speed</div>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=JIRqdeNl2cU" target="_blank" rel="noopener" class="vid-card anim" data-cat="f1" style="text-decoration:none;color:var(--text)">
+      <div class="vid-card-thumb">
+        <img src="https://img.youtube.com/vi/JIRqdeNl2cU/mqdefault.jpg" alt="F1 Dutch GP">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Formula 1 — Official</div>
+        <h4>Race Highlights: 2025 Dutch Grand Prix — Zandvoort</h4>
+        <div class="vmeta-time">Piastri wins at Zandvoort</div>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=yApM21L0GgY" target="_blank" rel="noopener" class="vid-card anim" data-cat="f1" style="text-decoration:none;color:var(--text)">
+      <div class="vid-card-thumb">
+        <img src="https://img.youtube.com/vi/yApM21L0GgY/mqdefault.jpg" alt="F1 Belgian GP">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Formula 1 — Official</div>
+        <h4>Race Highlights: 2025 Belgian Grand Prix — Spa</h4>
+        <div class="vmeta-time">Piastri dominates Spa in the rain</div>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=8Y3IaK-rM5M" target="_blank" rel="noopener" class="vid-card anim" data-cat="cars" style="text-decoration:none;color:var(--text)">
+      <div class="vid-card-thumb">
+        <img src="https://img.youtube.com/vi/8Y3IaK-rM5M/mqdefault.jpg" alt="Hypercar drag race">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Carwow — Drag Race</div>
+        <h4>Revuelto vs SF90 vs Ferrari 296 — 1,000hp+ Battle</h4>
+        <div class="vmeta-time">Three hypercars, one drag strip</div>
+      </div>
+    </a>
+    <a href="https://www.youtube.com/watch?v=iGp1K6gen4M" target="_blank" rel="noopener" class="vid-card anim" data-cat="cars" style="text-decoration:none;color:var(--text)">
+      <div class="vid-card-thumb">
+        <img src="https://img.youtube.com/vi/iGp1K6gen4M/mqdefault.jpg" alt="McLaren 750S">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Top Gear — Review</div>
+        <h4>McLaren 750S vs Ferrari 296 — Road And Track Battle</h4>
+        <div class="vmeta-time">Head-to-head supercar test</div>
+      </div>
+    </a>
+    <div class="vid-card anim" data-cat="football">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=480&q=70" alt="UCL">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Champions League</div>
+        <h4>Real Madrid 2-1 Arsenal — UCL QF Highlights</h4>
+        <div class="vmeta-time">Bellingham's late winner</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="basketball">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=480&q=70" alt="NBA">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">NBA — Highlights</div>
+        <h4>Thunder 118-109 Nuggets — Double OT Thriller</h4>
+        <div class="vmeta-time">SGA drops 42 points</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="f1">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=480&q=70" alt="F1">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Formula 1 — 2026</div>
+        <h4>Chinese GP Qualifying: Antonelli's Record Lap</h4>
+        <div class="vmeta-time">Youngest pole sitter in F1 history</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="cars">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=480&q=70" alt="Ferrari">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Top Gear — Track Test</div>
+        <h4>Ferrari SF90 Stradale — Full Review</h4>
+        <div class="vmeta-time">986hp hybrid V8 tested</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="football">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=480&q=70" alt="Premier League">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Premier League</div>
+        <h4>Arsenal 3-0 Man United — Match Highlights</h4>
+        <div class="vmeta-time">Saka, Havertz, Rice all score</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="basketball">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=480&q=70" alt="NBA">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">NBA — Highlights</div>
+        <h4>Celtics 112-98 Bucks — Tatum's 38-Point Masterclass</h4>
+        <div class="vmeta-time">Boston takes 3-1 series lead</div>
+      </div>
+    </div>
+    <div class="vid-card anim" data-cat="cars">
+      <div class="vid-card-thumb">
+        <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=480&q=70" alt="Lamborghini">
+        <div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div>
+      </div>
+      <div class="vid-card-info">
+        <div class="vmeta-tag">Carwow — First Look</div>
+        <h4>Bugatti Tourbillon — V16 Hypercar Revealed</h4>
+        <div class="vmeta-time">1,800hp, $4 million, already sold out</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

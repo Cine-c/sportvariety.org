@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Athletes — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Athlete profiles and stats for F1 drivers, NBA players, footballers, and tennis stars on Sport Variety.">
+<meta property="og:title" content="Athletes — Sport Variety">
+<meta property="og:description" content="Athlete profiles and stats for F1 drivers, NBA players, footballers, and tennis stars.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/athletes.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/athletes.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html" class="nav-active">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-athletes">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Athlete <em>Spotlight</em></div>
+    <p class="page-hero-sub">The biggest names across football, basketball, F1, tennis, NFL and more.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Athletes</div>
+
+<div class="section">
+  <div class="score-tabs">
+    <button class="stab ath-filter-btn on" onclick="filterAth('all',this)">All</button>
+    <button class="stab ath-filter-btn" onclick="filterAth('football',this)">Football</button>
+    <button class="stab ath-filter-btn" onclick="filterAth('basketball',this)">Basketball</button>
+    <button class="stab ath-filter-btn" onclick="filterAth('f1',this)">F1</button>
+    <button class="stab ath-filter-btn" onclick="filterAth('tennis',this)">Tennis</button>
+    <button class="stab ath-filter-btn" onclick="filterAth('nfl',this)">NFL</button>
+  </div>
+
+  <div class="ath-page-grid">
+    <div class="ath anim" data-sport="basketball">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Basketball">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">NBA — LA Lakers</div><div class="ath-name">LeBron James</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">28.4</div><div class="ath-sk">PPG</div></div>
+        <div class="ath-stat"><div class="ath-sv">8.1</div><div class="ath-sk">RPG</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="f1">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">F1 — Red Bull Racing</div><div class="ath-name">Max Verstappen</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">63</div><div class="ath-sk">Race Wins</div></div>
+        <div class="ath-stat"><div class="ath-sv">4x</div><div class="ath-sk">Champion</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="football">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">UCL — Real Madrid</div><div class="ath-name">Jude Bellingham</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">21</div><div class="ath-sk">Goals</div></div>
+        <div class="ath-stat"><div class="ath-sv">14</div><div class="ath-sk">Assists</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="tennis">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80" alt="Tennis">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">Tennis — World No.1</div><div class="ath-name">Jannik Sinner</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">3</div><div class="ath-sk">Grand Slams</div></div>
+        <div class="ath-stat"><div class="ath-sv">89%</div><div class="ath-sk">Win Rate</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="f1">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">F1 — Mercedes</div><div class="ath-name">Kimi Antonelli</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">18</div><div class="ath-sk">Years Old</div></div>
+        <div class="ath-stat"><div class="ath-sv">P1</div><div class="ath-sk">Pole — CHN</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="football">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">PL — Arsenal</div><div class="ath-name">Bukayo Saka</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">16</div><div class="ath-sk">Goals</div></div>
+        <div class="ath-stat"><div class="ath-sv">12</div><div class="ath-sk">Assists</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="f1">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">F1 — McLaren</div><div class="ath-name">Lando Norris</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">1x</div><div class="ath-sk">Champion</div></div>
+        <div class="ath-stat"><div class="ath-sv">24</div><div class="ath-sk">Race Wins</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="basketball">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Basketball">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">NBA — OKC Thunder</div><div class="ath-name">Shai Gilgeous-Alexander</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">31.2</div><div class="ath-sk">PPG</div></div>
+        <div class="ath-stat"><div class="ath-sv">6.4</div><div class="ath-sk">APG</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="tennis">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80" alt="Tennis">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">Tennis — World No.2</div><div class="ath-name">Carlos Alcaraz</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">4</div><div class="ath-sk">Grand Slams</div></div>
+        <div class="ath-stat"><div class="ath-sv">21</div><div class="ath-sk">Years Old</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="nfl">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=600&q=80" alt="NFL">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">NFL — Kansas City Chiefs</div><div class="ath-name">Patrick Mahomes</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">3x</div><div class="ath-sk">Super Bowl</div></div>
+        <div class="ath-stat"><div class="ath-sv">3x</div><div class="ath-sk">MVP</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="f1">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">F1 — Ferrari</div><div class="ath-name">Lewis Hamilton</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">7x</div><div class="ath-sk">Champion</div></div>
+        <div class="ath-stat"><div class="ath-sv">104</div><div class="ath-sk">Race Wins</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="football">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">PL — Man City</div><div class="ath-name">Erling Haaland</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">28</div><div class="ath-sk">Goals</div></div>
+        <div class="ath-stat"><div class="ath-sv">6</div><div class="ath-sk">Assists</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="basketball">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Basketball">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">NBA — Denver Nuggets</div><div class="ath-name">Nikola Jokic</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">26.8</div><div class="ath-sk">PPG</div></div>
+        <div class="ath-stat"><div class="ath-sv">12.4</div><div class="ath-sk">RPG</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="football">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">La Liga — Barcelona</div><div class="ath-name">Lamine Yamal</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">12</div><div class="ath-sk">Goals</div></div>
+        <div class="ath-stat"><div class="ath-sv">17</div><div class="ath-sk">Years Old</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="nfl">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1566577739112-5180d4bf9390?w=600&q=80" alt="NFL">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">NFL — Buffalo Bills</div><div class="ath-name">Josh Allen</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">4,544</div><div class="ath-sk">Pass Yds</div></div>
+        <div class="ath-stat"><div class="ath-sv">40</div><div class="ath-sk">Pass TD</div></div>
+      </div>
+    </div>
+    <div class="ath anim" data-sport="f1">
+      <div class="ath-img">
+        <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+        <div class="ath-ov"></div>
+        <div class="ath-bot"><div class="ath-sport">F1 — Mercedes</div><div class="ath-name">George Russell</div></div>
+      </div>
+      <div class="ath-stats">
+        <div class="ath-stat"><div class="ath-sv">P1</div><div class="ath-sk">Championship</div></div>
+        <div class="ath-stat"><div class="ath-sv">87</div><div class="ath-sk">Points</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

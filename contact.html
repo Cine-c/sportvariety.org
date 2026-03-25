@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Get in touch with the Sport Variety team. Reach out for inquiries, partnerships, or feedback.">
+<meta property="og:title" content="Contact — Sport Variety">
+<meta property="og:description" content="Get in touch with the Sport Variety team. Reach out for inquiries, partnerships, or feedback.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/contact.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/contact.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-contact">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Get In <em>Touch</em></div>
+    <p class="page-hero-sub">Questions, feedback, partnerships — we'd love to hear from you.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Contact</div>
+
+<div class="contact-grid">
+  <div>
+    <div class="sec-ttl" style="margin-bottom:24px">Send Us a <em>Message</em></div>
+    <form id="contact-form" onsubmit="handleContact(event)">
+      <div class="form-group">
+        <label class="form-label" for="name">Full Name</label>
+        <input class="form-input" type="text" id="name" placeholder="Your full name" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="email">Email Address</label>
+        <input class="form-input" type="email" id="email" placeholder="you@example.com" required>
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="subject">Subject</label>
+        <input class="form-input" type="text" id="subject" placeholder="What's this about?">
+      </div>
+      <div class="form-group">
+        <label class="form-label" for="message">Message</label>
+        <textarea class="form-textarea" id="message" placeholder="Tell us what's on your mind..." required></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message</button>
+      <p class="form-disclaimer">This form is for display purposes. To reach us directly, email <a href="mailto:hello@sportvariety.org" style="color:var(--accent)">hello@sportvariety.org</a>.</p>
+    </form>
+    <div class="form-confirmation" id="contact-confirm">
+      Thank you! Your message has been received. For a faster response, email us directly at <a href="mailto:hello@sportvariety.org" style="color:var(--accent)">hello@sportvariety.org</a>.
+    </div>
+  </div>
+
+  <div class="contact-info">
+    <h3>Contact <em style="font-style:normal;color:var(--accent)">Info</em></h3>
+    <div class="contact-info-item">
+      <div class="contact-info-label">Email</div>
+      <div class="contact-info-val">hello@sportvariety.org</div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-label">Press Inquiries</div>
+      <div class="contact-info-val">press@sportvariety.org</div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-label">Partnerships</div>
+      <div class="contact-info-val">partners@sportvariety.org</div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-label">Social</div>
+      <div class="contact-info-val">@Sport Variety on X, Instagram, YouTube</div>
+    </div>
+    <div class="contact-info-item">
+      <div class="contact-info-label">Response Time</div>
+      <div class="contact-info-val">We typically respond within 24 hours on business days.</div>
+    </div>
+  </div>
+</div>
+
+<div class="contact-legal" id="privacy">
+  <h3>Privacy <em style="font-style:normal;color:var(--accent)">Policy</em></h3>
+  <p>Sport Variety respects your privacy. We do not sell, trade, or share your personal information with third parties. Any data collected through our contact form is used solely to respond to your inquiry. We use analytics cookies to understand how visitors interact with our site, but no personally identifiable information is tracked.</p>
+  <p>You can request deletion of your data at any time by emailing privacy@sportvariety.org. We comply with GDPR and applicable data protection regulations.</p>
+</div>
+
+<div class="contact-legal" id="terms">
+  <h3>Terms of <em style="font-style:normal;color:var(--accent)">Use</em></h3>
+  <p>By accessing Sport Variety, you agree to these terms. All content on this site — including text, images, scores, standings, and reviews — is provided for informational and entertainment purposes only. Live scores and standings are sourced from public feeds and may be subject to delay.</p>
+  <p>You may not reproduce, redistribute, or republish our original content without written permission. Sport Variety is not responsible for the accuracy of third-party data or external links. All trademarks, team names, and athlete likenesses belong to their respective owners.</p>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

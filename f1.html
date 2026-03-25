@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formula 1 — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Formula 1 standings, race calendar, driver stats, and the latest F1 news on Sport Variety.">
+<meta property="og:title" content="Formula 1 — Sport Variety">
+<meta property="og:description" content="Formula 1 standings, race calendar, driver stats, and the latest F1 news.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/f1.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/f1.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html" class="nav-active">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-f1">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Formula <em>1</em> — 2026</div>
+    <p class="page-hero-sub">Full driver and constructor standings, race calendar, and championship tracking.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Formula 1</div>
+
+<div class="section">
+  <div class="f1-page-grid">
+    <!-- Standings -->
+    <div class="f1-table-wrap">
+      <div class="f1-tab-bar">
+        <button class="f1-tab-btn on" onclick="toggleF1Tab('f1-drivers',this)">Drivers</button>
+        <button class="f1-tab-btn" onclick="toggleF1Tab('f1-constructors',this)">Constructors</button>
+      </div>
+      <div id="f1-drivers" class="f1-tab-content active">
+        <div class="srow"><div class="spos p1">1</div><div><div class="sdrv-n">George Russell</div><div class="sdrv-t"><span class="tdot" style="background:#27F4D2"></span>Mercedes</div></div><div class="spts">87</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos p2">2</div><div><div class="sdrv-n">Kimi Antonelli</div><div class="sdrv-t"><span class="tdot" style="background:#27F4D2"></span>Mercedes</div></div><div class="spts">62</div><div class="schg up">+3</div></div>
+        <div class="srow"><div class="spos p3">3</div><div><div class="sdrv-n">Max Verstappen</div><div class="sdrv-t"><span class="tdot" style="background:#3671C6"></span>Red Bull</div></div><div class="spts">48</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">4</div><div><div class="sdrv-n">Lando Norris</div><div class="sdrv-t"><span class="tdot" style="background:#FF8000"></span>McLaren</div></div><div class="spts">45</div><div class="schg up">+1</div></div>
+        <div class="srow"><div class="spos">5</div><div><div class="sdrv-n">Lewis Hamilton</div><div class="sdrv-t"><span class="tdot" style="background:#E8002D"></span>Ferrari</div></div><div class="spts">40</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">6</div><div><div class="sdrv-n">Charles Leclerc</div><div class="sdrv-t"><span class="tdot" style="background:#E8002D"></span>Ferrari</div></div><div class="spts">38</div><div class="schg up">+2</div></div>
+        <div class="srow"><div class="spos">7</div><div><div class="sdrv-n">Oscar Piastri</div><div class="sdrv-t"><span class="tdot" style="background:#FF8000"></span>McLaren</div></div><div class="spts">32</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">8</div><div><div class="sdrv-n">Carlos Sainz</div><div class="sdrv-t"><span class="tdot" style="background:#64C4FF"></span>Williams</div></div><div class="spts">28</div><div class="schg up">+1</div></div>
+        <div class="srow"><div class="spos">9</div><div><div class="sdrv-n">Liam Lawson</div><div class="sdrv-t"><span class="tdot" style="background:#3671C6"></span>Red Bull</div></div><div class="spts">24</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">10</div><div><div class="sdrv-n">Pierre Gasly</div><div class="sdrv-t"><span class="tdot" style="background:#0093CC"></span>Alpine</div></div><div class="spts">20</div><div class="schg up">+2</div></div>
+        <div class="srow"><div class="spos">11</div><div><div class="sdrv-n">Fernando Alonso</div><div class="sdrv-t"><span class="tdot" style="background:#229971"></span>Aston Martin</div></div><div class="spts">18</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">12</div><div><div class="sdrv-n">Alex Albon</div><div class="sdrv-t"><span class="tdot" style="background:#64C4FF"></span>Williams</div></div><div class="spts">15</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">13</div><div><div class="sdrv-n">Lance Stroll</div><div class="sdrv-t"><span class="tdot" style="background:#229971"></span>Aston Martin</div></div><div class="spts">12</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">14</div><div><div class="sdrv-n">Nico Hulkenberg</div><div class="sdrv-t"><span class="tdot" style="background:#52E252"></span>Sauber</div></div><div class="spts">10</div><div class="schg up">+1</div></div>
+        <div class="srow"><div class="spos">15</div><div><div class="sdrv-n">Jack Doohan</div><div class="sdrv-t"><span class="tdot" style="background:#0093CC"></span>Alpine</div></div><div class="spts">8</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">16</div><div><div class="sdrv-n">Yuki Tsunoda</div><div class="sdrv-t"><span class="tdot" style="background:#6692FF"></span>RB</div></div><div class="spts">6</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">17</div><div><div class="sdrv-n">Isack Hadjar</div><div class="sdrv-t"><span class="tdot" style="background:#6692FF"></span>RB</div></div><div class="spts">4</div><div class="schg up">+1</div></div>
+        <div class="srow"><div class="spos">18</div><div><div class="sdrv-n">Gabriel Bortoleto</div><div class="sdrv-t"><span class="tdot" style="background:#52E252"></span>Sauber</div></div><div class="spts">3</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">19</div><div><div class="sdrv-n">Oliver Bearman</div><div class="sdrv-t"><span class="tdot" style="background:#B6BABD"></span>Haas</div></div><div class="spts">2</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">20</div><div><div class="sdrv-n">Esteban Ocon</div><div class="sdrv-t"><span class="tdot" style="background:#B6BABD"></span>Haas</div></div><div class="spts">1</div><div class="schg same">—</div></div>
+      </div>
+      <div id="f1-constructors" class="f1-tab-content">
+        <div class="constructor-row"><div class="spos p1">1</div><div><div class="sdrv-n">Mercedes</div><div class="sdrv-t"><span class="tdot" style="background:#27F4D2"></span>Russell / Antonelli</div></div><div class="spts">149</div></div>
+        <div class="constructor-row"><div class="spos p2">2</div><div><div class="sdrv-n">McLaren</div><div class="sdrv-t"><span class="tdot" style="background:#FF8000"></span>Norris / Piastri</div></div><div class="spts">77</div></div>
+        <div class="constructor-row"><div class="spos p3">3</div><div><div class="sdrv-n">Ferrari</div><div class="sdrv-t"><span class="tdot" style="background:#E8002D"></span>Hamilton / Leclerc</div></div><div class="spts">78</div></div>
+        <div class="constructor-row"><div class="spos">4</div><div><div class="sdrv-n">Red Bull Racing</div><div class="sdrv-t"><span class="tdot" style="background:#3671C6"></span>Verstappen / Lawson</div></div><div class="spts">72</div></div>
+        <div class="constructor-row"><div class="spos">5</div><div><div class="sdrv-n">Williams</div><div class="sdrv-t"><span class="tdot" style="background:#64C4FF"></span>Sainz / Albon</div></div><div class="spts">43</div></div>
+        <div class="constructor-row"><div class="spos">6</div><div><div class="sdrv-n">Aston Martin</div><div class="sdrv-t"><span class="tdot" style="background:#229971"></span>Alonso / Stroll</div></div><div class="spts">30</div></div>
+        <div class="constructor-row"><div class="spos">7</div><div><div class="sdrv-n">Alpine</div><div class="sdrv-t"><span class="tdot" style="background:#0093CC"></span>Gasly / Doohan</div></div><div class="spts">28</div></div>
+        <div class="constructor-row"><div class="spos">8</div><div><div class="sdrv-n">RB</div><div class="sdrv-t"><span class="tdot" style="background:#6692FF"></span>Tsunoda / Hadjar</div></div><div class="spts">10</div></div>
+        <div class="constructor-row"><div class="spos">9</div><div><div class="sdrv-n">Sauber</div><div class="sdrv-t"><span class="tdot" style="background:#52E252"></span>Hulkenberg / Bortoleto</div></div><div class="spts">13</div></div>
+        <div class="constructor-row"><div class="spos">10</div><div><div class="sdrv-n">Haas</div><div class="sdrv-t"><span class="tdot" style="background:#B6BABD"></span>Bearman / Ocon</div></div><div class="spts">3</div></div>
+      </div>
+    </div>
+
+    <!-- F1 Hero card -->
+    <div class="f1-hero">
+      <div class="f1-img-w"><img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=1200&q=80" alt="Formula 1 car on track"></div>
+      <div class="f1-ov"></div>
+      <div class="f1-badge">Race Weekend</div>
+      <div class="f1-content">
+        <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Round 2 — Chinese Grand Prix, Shanghai</div>
+        <h3>Antonelli Claims Historic Pole In Shanghai</h3>
+        <p>Kimi Antonelli set a stunning 1:29.941 at Shanghai International Circuit, becoming the youngest pole sitter in F1 history at just 18 years old. Russell slots in P2 for an all-Mercedes front row.</p>
+        <div class="f1-nums">
+          <div><div class="f1-nv">P1</div><div class="f1-nk">Grid Position</div></div>
+          <div><div class="f1-nv">1:29.9</div><div class="f1-nk">Lap Time</div></div>
+          <div><div class="f1-nv">+0.14s</div><div class="f1-nk">Gap to P2</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Race Calendar -->
+  <div class="race-calendar">
+    <h3>2026 Race <em style="font-style:normal;color:var(--accent)">Calendar</em></h3>
+    <div class="race-calendar-grid">
+      <div class="race-card"><div class="race-card-round">R1</div><div class="race-card-name">Australian GP</div><div class="race-card-circuit">Albert Park, Melbourne</div><div class="race-card-date">Mar 8-9</div></div>
+      <div class="race-card" style="border-color:var(--accent)"><div class="race-card-round">R2</div><div class="race-card-name">Chinese GP</div><div class="race-card-circuit">Shanghai International</div><div class="race-card-date">Mar 22-23 — This Weekend</div></div>
+      <div class="race-card"><div class="race-card-round">R3</div><div class="race-card-name">Japanese GP</div><div class="race-card-circuit">Suzuka Circuit</div><div class="race-card-date">Apr 5-6</div></div>
+      <div class="race-card"><div class="race-card-round">R4</div><div class="race-card-name">Bahrain GP</div><div class="race-card-circuit">Bahrain International</div><div class="race-card-date">Apr 12-13</div></div>
+      <div class="race-card"><div class="race-card-round">R5</div><div class="race-card-name">Saudi Arabian GP</div><div class="race-card-circuit">Jeddah Corniche</div><div class="race-card-date">Apr 19-20</div></div>
+      <div class="race-card"><div class="race-card-round">R6</div><div class="race-card-name">Miami GP</div><div class="race-card-circuit">Miami International</div><div class="race-card-date">May 3-4</div></div>
+      <div class="race-card"><div class="race-card-round">R7</div><div class="race-card-name">Emilia Romagna GP</div><div class="race-card-circuit">Imola</div><div class="race-card-date">May 17-18</div></div>
+      <div class="race-card"><div class="race-card-round">R8</div><div class="race-card-name">Monaco GP</div><div class="race-card-circuit">Circuit de Monaco</div><div class="race-card-date">May 24-25</div></div>
+      <div class="race-card"><div class="race-card-round">R9</div><div class="race-card-name">Spanish GP</div><div class="race-card-circuit">Circuit de Barcelona</div><div class="race-card-date">Jun 1</div></div>
+      <div class="race-card"><div class="race-card-round">R10</div><div class="race-card-name">Canadian GP</div><div class="race-card-circuit">Circuit Gilles Villeneuve</div><div class="race-card-date">Jun 15</div></div>
+      <div class="race-card"><div class="race-card-round">R11</div><div class="race-card-name">Austrian GP</div><div class="race-card-circuit">Red Bull Ring</div><div class="race-card-date">Jun 29</div></div>
+      <div class="race-card"><div class="race-card-round">R12</div><div class="race-card-name">British GP</div><div class="race-card-circuit">Silverstone</div><div class="race-card-date">Jul 6</div></div>
+      <div class="race-card"><div class="race-card-round">R13</div><div class="race-card-name">Belgian GP</div><div class="race-card-circuit">Spa-Francorchamps</div><div class="race-card-date">Jul 27</div></div>
+      <div class="race-card"><div class="race-card-round">R14</div><div class="race-card-name">Hungarian GP</div><div class="race-card-circuit">Hungaroring</div><div class="race-card-date">Aug 3</div></div>
+      <div class="race-card"><div class="race-card-round">R15</div><div class="race-card-name">Dutch GP</div><div class="race-card-circuit">Zandvoort</div><div class="race-card-date">Aug 31</div></div>
+      <div class="race-card"><div class="race-card-round">R16</div><div class="race-card-name">Italian GP</div><div class="race-card-circuit">Monza</div><div class="race-card-date">Sep 7</div></div>
+      <div class="race-card"><div class="race-card-round">R17</div><div class="race-card-name">Azerbaijan GP</div><div class="race-card-circuit">Baku City Circuit</div><div class="race-card-date">Sep 21</div></div>
+      <div class="race-card"><div class="race-card-round">R18</div><div class="race-card-name">Singapore GP</div><div class="race-card-circuit">Marina Bay</div><div class="race-card-date">Oct 5</div></div>
+      <div class="race-card"><div class="race-card-round">R19</div><div class="race-card-name">United States GP</div><div class="race-card-circuit">COTA, Austin</div><div class="race-card-date">Oct 19</div></div>
+      <div class="race-card"><div class="race-card-round">R20</div><div class="race-card-name">Mexican GP</div><div class="race-card-circuit">Autodromo Hermanos Rodriguez</div><div class="race-card-date">Oct 26</div></div>
+      <div class="race-card"><div class="race-card-round">R21</div><div class="race-card-name">Brazilian GP</div><div class="race-card-circuit">Interlagos, Sao Paulo</div><div class="race-card-date">Nov 9</div></div>
+      <div class="race-card"><div class="race-card-round">R22</div><div class="race-card-name">Las Vegas GP</div><div class="race-card-circuit">Las Vegas Strip</div><div class="race-card-date">Nov 22</div></div>
+      <div class="race-card"><div class="race-card-round">R23</div><div class="race-card-name">Qatar GP</div><div class="race-card-circuit">Lusail International</div><div class="race-card-date">Nov 30</div></div>
+      <div class="race-card"><div class="race-card-round">R24</div><div class="race-card-name">Abu Dhabi GP</div><div class="race-card-circuit">Yas Marina</div><div class="race-card-date">Dec 7</div></div>
+    </div>
+  </div>
+  <div class="ad-slot" style="margin-top:32px">Advertisement</div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

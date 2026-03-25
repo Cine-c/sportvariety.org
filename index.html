@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sport Variety — Sports & Motors Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Live scores, F1 standings, hypercar reviews, and breaking sports news. Where speed meets glory.">
+<meta property="og:title" content="Sport Variety — Sports & Motors Hub">
+<meta property="og:description" content="Live scores, F1 standings, hypercar reviews, and breaking sports news. Where speed meets glory.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/">
+<meta property="og:image" content="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"Sport Variety","url":"https://sportvariety.org","description":"Live scores, F1 standings, hypercar reviews, and breaking sports news. Where speed meets glory.","publisher":{"@type":"Organization","name":"Sport Variety","logo":{"@type":"ImageObject","url":"https://sportvariety.org/favicon.svg"}}}
+</script>
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="ticker">
+  <div class="ticker-tag">BREAKING</div>
+  <div style="overflow:hidden;flex:1">
+    <div class="ticker-items">
+      <span class="tick">F1 Chinese GP: Kimi Antonelli POLE — youngest pole sitter in F1 history at 18 years old</span><span class="tick-sep">|</span>
+      <span class="tick">UCL QF: Real Madrid 2-1 Arsenal 88' — Bellingham header seals it!</span><span class="tick-sep">|</span>
+      <span class="tick">NBA: Thunder 118-109 Nuggets 2OT — SGA drops 42 in Western Conference thriller</span><span class="tick-sep">|</span>
+      <span class="tick">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span><span class="tick-sep">|</span>
+      <span class="tick">Miami Open Final: Sinner def. Alcaraz 6-4 6-3 — 68 minutes</span><span class="tick-sep">|</span>
+      <span class="tick">NFL Free Agency: Saquon Barkley signs 4-year deal with Philadelphia Eagles</span><span class="tick-sep">|</span>
+      <span class="tick">F1 Chinese GP: Kimi Antonelli POLE — youngest pole sitter in F1 history at 18 years old</span><span class="tick-sep">|</span>
+      <span class="tick">UCL QF: Real Madrid 2-1 Arsenal 88' — Bellingham header seals it!</span><span class="tick-sep">|</span>
+      <span class="tick">NBA: Thunder 118-109 Nuggets 2OT — SGA drops 42 in Western Conference thriller</span><span class="tick-sep">|</span>
+      <span class="tick">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span><span class="tick-sep">|</span>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="hero-body">
+    <div class="hero-chip">F1 2026 Season — Round 2 Shanghai</div>
+    <h1>Where<br>Speed<br>Meets <em>Glory</em></h1>
+    <p class="hero-sub">Live scores, F1 standings, hypercar reviews, and breaking sports news — everything that moves fast, all in one place.</p>
+    <div class="btn-row">
+      <button class="btn-a" onclick="document.getElementById('scores').scrollIntoView({behavior:'smooth'})">Live Scores</button>
+      <button class="btn-b" onclick="document.getElementById('videos').scrollIntoView({behavior:'smooth'})">Watch Highlights</button>
+    </div>
+  </div>
+  <div class="hero-floats">
+    <div class="hfc"><div class="hfc-n">24</div><div class="hfc-l">Live Now</div></div>
+    <div class="hfc"><div class="hfc-n">847</div><div class="hfc-l">Stories</div></div>
+    <div class="hfc"><div class="hfc-n">2026</div><div class="hfc-l">F1 Season</div></div>
+  </div>
+</div>
+
+<!-- LIVE SCORES -->
+<div class="section" id="scores">
+  <div class="sec-head">
+    <div class="sec-ttl">Live <em>Scores</em></div>
+    <a href="scores.html" class="sec-lnk">All Fixtures</a>
+  </div>
+  <div class="score-tabs">
+    <button class="stab on" onclick="filterSc('all',this)">All</button>
+    <button class="stab" onclick="filterSc('football',this)">Football</button>
+    <button class="stab" onclick="filterSc('basketball',this)">Basketball</button>
+    <button class="stab" onclick="filterSc('f1',this)">F1</button>
+    <button class="stab" onclick="filterSc('nfl',this)">NFL</button>
+  </div>
+  <div class="scores-wrap" id="sc-grid">
+    <div class="sc anim" data-sp="f1">
+      <div class="sc-top"><span class="sc-sport">F1 — Chinese GP Sprint</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">UCL Quarter-Final — 88'</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="basketball">
+      <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score" style="color:var(--muted);font-size:26px">109</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">Premier League</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="nfl">
+      <div class="sc-top"><span class="sc-sport">NFL Free Agency</span><span class="sc-status s-ft">DONE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Saquon Barkley — RB</span><span class="sc-score" style="font-size:18px;margin-top:4px">RB</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Philadelphia Eagles</span><span class="sc-score" style="color:var(--muted);font-size:14px">4-Year Deal</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">La Liga — Tomorrow</span><span class="sc-status s-up">UPCOMING</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Barcelona</span><span class="sc-score" style="color:var(--muted);font-size:20px">VS</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score" style="opacity:0">x</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- AD SLOT -->
+<div class="section" style="padding-top:0;padding-bottom:0"><div class="ad-slot">Advertisement</div></div>
+
+<!-- VIDEO HIGHLIGHTS -->
+<div class="section" id="videos">
+  <div class="sec-head">
+    <div class="sec-ttl">Video <em>Highlights</em></div>
+    <a href="https://www.youtube.com/@F1" target="_blank" class="sec-lnk">Watch on YouTube</a>
+  </div>
+  <div class="vid-grid">
+    <div>
+      <div class="yt-frame">
+        <iframe id="main-iframe" src="https://www.youtube.com/embed/kGMp1Byuwto?rel=0&modestbranding=1" title="F1 2025 Italian GP Highlights" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+      </div>
+      <div class="vid-tag">F1 2025 — Official Race Highlights</div>
+      <div class="vid-main-h" id="main-title">Race Highlights: 2025 Italian Grand Prix — Monza</div>
+      <p class="vid-main-p">Verstappen won from pole at the Temple of Speed ahead of Norris and Piastri. Lap record broken, penalty drama, late team orders — the full Monza story from the official F1 channel.</p>
+    </div>
+    <div class="vid-list">
+      <div class="vid-item" onclick="loadVid('JIRqdeNl2cU','Race Highlights: 2025 Dutch Grand Prix — Zandvoort')">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/JIRqdeNl2cU/mqdefault.jpg" alt="F1 Dutch GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">Formula 1 — Official</div><h4>2025 Dutch GP Race Highlights</h4><div class="vmeta-time">Piastri wins at Zandvoort</div></div>
+      </div>
+      <div class="vid-item" onclick="loadVid('yApM21L0GgY','Race Highlights: 2025 Belgian Grand Prix — Spa')">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/yApM21L0GgY/mqdefault.jpg" alt="F1 Belgian GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">Formula 1 — Official</div><h4>2025 Belgian GP Race Highlights</h4><div class="vmeta-time">Piastri dominates Spa in the rain</div></div>
+      </div>
+      <div class="vid-item" onclick="loadVid('8Y3IaK-rM5M','Lamborghini Revuelto vs Ferrari SF90 vs Ferrari 296 Drag Race — Carwow')">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/8Y3IaK-rM5M/mqdefault.jpg" alt="Hypercar drag race"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">Carwow — Drag Race</div><h4>Revuelto vs SF90 vs Ferrari 296</h4><div class="vmeta-time">1,000hp+ hypercars battle</div></div>
+      </div>
+      <div class="vid-item" onclick="loadVid('iGp1K6gen4M','McLaren 750S vs Ferrari 296 GTB: Road And Track Battle — Top Gear')">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/iGp1K6gen4M/mqdefault.jpg" alt="McLaren 750S"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">Top Gear — Review</div><h4>McLaren 750S vs Ferrari 296 — Which Wins?</h4><div class="vmeta-time">Road and track head-to-head</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MOTOR BAR -->
+<div class="motor-bar">
+  <div class="mb-tag">MOTORSPORT</div>
+  <div class="mb-items">
+    <span class="mb-item">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span>
+    <span class="mb-item">|</span>
+    <span class="mb-item">Kimi Antonelli youngest pole sitter in F1 history — 2026 Chinese GP 1:29.941</span>
+    <span class="mb-item">|</span>
+    <span class="mb-item">Ferrari SF90 XX sets new Fiorano lap record: 1:17.30</span>
+    <span class="mb-item">|</span>
+    <span class="mb-item">MotoGP: Bagnaia leads championship ahead of Thai GP</span>
+    <span class="mb-item">|</span>
+    <span class="mb-item">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span>
+    <span class="mb-item">|</span>
+    <span class="mb-item">Kimi Antonelli youngest pole sitter in F1 history — 2026 Chinese GP 1:29.941</span>
+  </div>
+</div>
+
+<!-- F1 SECTION -->
+<div class="f1-wrap" id="f1">
+  <div class="f1-inner">
+    <div class="sec-head">
+      <div class="sec-ttl">Formula <em>1</em> — 2026</div>
+      <a href="https://www.formula1.com" target="_blank" class="sec-lnk">F1.com</a>
+    </div>
+    <div class="f1-grid">
+      <div class="f1-hero">
+        <div class="f1-img-w"><img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=1200&q=80" alt="Formula 1 car on track"></div>
+        <div class="f1-ov"></div>
+        <div class="f1-badge">Race Weekend</div>
+        <div class="f1-content">
+          <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent)">Round 2 — Chinese Grand Prix, Shanghai</div>
+          <h3>Antonelli Claims Historic Pole In Shanghai</h3>
+          <p>Kimi Antonelli set a stunning 1:29.941 at Shanghai International Circuit, becoming the youngest pole sitter in F1 history at just 18 years old. Russell slots in P2 for an all-Mercedes front row.</p>
+          <div class="f1-nums">
+            <div><div class="f1-nv">P1</div><div class="f1-nk">Grid Position</div></div>
+            <div><div class="f1-nv">1:29.9</div><div class="f1-nk">Lap Time</div></div>
+            <div><div class="f1-nv">+0.14s</div><div class="f1-nk">Gap to P2</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="f1-stand">
+        <div class="stand-hd">2026 Drivers Championship</div>
+        <div class="srow"><div class="spos p1">1</div><div><div class="sdrv-n">George Russell</div><div class="sdrv-t"><span class="tdot" style="background:#27F4D2"></span>Mercedes</div></div><div class="spts">87</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos p2">2</div><div><div class="sdrv-n">Kimi Antonelli</div><div class="sdrv-t"><span class="tdot" style="background:#27F4D2"></span>Mercedes</div></div><div class="spts">62</div><div class="schg up">+3</div></div>
+        <div class="srow"><div class="spos p3">3</div><div><div class="sdrv-n">Max Verstappen</div><div class="sdrv-t"><span class="tdot" style="background:#3671C6"></span>Red Bull</div></div><div class="spts">48</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">4</div><div><div class="sdrv-n">Lando Norris</div><div class="sdrv-t"><span class="tdot" style="background:#FF8000"></span>McLaren</div></div><div class="spts">45</div><div class="schg up">+1</div></div>
+        <div class="srow"><div class="spos">5</div><div><div class="sdrv-n">Lewis Hamilton</div><div class="sdrv-t"><span class="tdot" style="background:#E8002D"></span>Ferrari</div></div><div class="spts">40</div><div class="schg same">—</div></div>
+        <div class="srow"><div class="spos">6</div><div><div class="sdrv-n">Charles Leclerc</div><div class="sdrv-t"><span class="tdot" style="background:#E8002D"></span>Ferrari</div></div><div class="spts">38</div><div class="schg up">+2</div></div>
+        <div class="srow"><div class="spos">7</div><div><div class="sdrv-n">Oscar Piastri</div><div class="sdrv-t"><span class="tdot" style="background:#FF8000"></span>McLaren</div></div><div class="spts">32</div><div class="schg same">—</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CARS -->
+<div class="section" id="cars">
+  <div class="sec-head">
+    <div class="sec-ttl">Cars &amp; <em>Motors</em></div>
+    <a href="cars.html" class="sec-lnk">All Reviews</a>
+  </div>
+  <div class="cars-grid">
+    <div class="car anim">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80" alt="Ferrari SF90 Stradale"></div>
+      <div class="car-info">
+        <span class="cbadge b-track">Track Test</span>
+        <div class="car-name">Ferrari SF90 Stradale</div>
+        <div class="car-desc">986 horses from a twin-turbo V8 hybrid. Maranello's most advanced road car ever — it fires to 100 km/h before your brain registers the throttle.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.8 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">986</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.5s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">340</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="Lamborghini supercar"></div>
+      <div class="car-info">
+        <span class="cbadge b-super">Hypercar</span>
+        <div class="car-name">Lamborghini Revuelto</div>
+        <div class="car-desc">1,001hp V12 hybrid raging bull. Top Gear: "Possibly the best Lambo since the Miura." A revolutionary car that embraces the future without losing its soul.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.6 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1001</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.5s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">350</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="Sports car on track"></div>
+      <div class="car-info">
+        <span class="cbadge b-ev">EV Track Beast</span>
+        <div class="car-name">Porsche Taycan Turbo GT</div>
+        <div class="car-desc">1,108hp and the Nurburgring production car lap record. The electric car that made combustion fans question their faith. Weissach package: non-negotiable.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.5 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1108</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.2s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">305</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cvid-row">
+    <div class="cvid-embed">
+      <iframe src="https://www.youtube.com/embed/8Y3IaK-rM5M?rel=0&modestbranding=1" title="Revuelto vs SF90 vs 918 Drag Race" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <div class="cvid-side">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:4px">Also On APEX Cars</div>
+      <div class="mcar">
+        <div class="mcar-img"><img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?w=300&q=70" alt="McLaren 750S"></div>
+        <div class="mcar-info"><div class="mcar-badge">Track Test</div><div class="mcar-name">McLaren 750S</div><div class="mcar-spec">740hp — 2.7s — 332 km/h top speed</div></div>
+      </div>
+      <div class="mcar">
+        <div class="mcar-img"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=300&q=70" alt="Bugatti"></div>
+        <div class="mcar-info"><div class="mcar-badge">Hypercar</div><div class="mcar-name">Bugatti Tourbillon</div><div class="mcar-spec">1800hp — V16 NA + Hybrid</div></div>
+      </div>
+      <div class="mcar">
+        <div class="mcar-img"><img src="https://images.unsplash.com/photo-1562141961-dc1ac6ff4d1f?w=300&q=70" alt="SUV"></div>
+        <div class="mcar-info"><div class="mcar-badge">Super-SUV</div><div class="mcar-name">Aston Martin DBX707</div><div class="mcar-spec">707hp — World's fastest SUV</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- AD SLOT -->
+<div class="section" style="padding-top:0;padding-bottom:0"><div class="ad-slot">Advertisement</div></div>
+
+<!-- TOP NEWS -->
+<div class="section" id="news" style="padding-top:20px">
+  <div class="sec-head">
+    <div class="sec-ttl">Top <em>Stories</em></div>
+    <a href="news.html" class="sec-lnk">All News</a>
+  </div>
+  <div class="news-grid">
+    <div class="nmain">
+      <div class="nm-img"><img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80" alt="Football stadium"></div>
+      <div class="nm-ov"></div>
+      <div class="nm-body">
+        <div class="nm-tag">UEFA Champions League — QF 2nd Leg</div>
+        <h3>Bellingham's 88th-Minute Header Sends Bernabeu Wild</h3>
+        <p>Jude Bellingham powered home a towering header deep in stoppage time to send Real Madrid into the UCL semi-finals — ending Arsenal's European dream in the most dramatic fashion possible.</p>
+        <div class="nm-byline">By Carlos Moreno — Mar 16, 2026 — 8 min read</div>
+      </div>
+    </div>
+    <div class="news-list">
+      <div class="ni">
+        <div class="ni-img"><img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=400&q=70" alt="F1"></div>
+        <div class="ni-body"><div class="ni-tag">Formula 1</div><div class="ni-title">Kimi Antonelli Claims Historic Pole — Youngest Ever in F1 History at 18</div><div class="ni-time">Mar 22, 2026 — 6 min read</div></div>
+      </div>
+      <div class="ni">
+        <div class="ni-img"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=70" alt="NBA Basketball"></div>
+        <div class="ni-body"><div class="ni-tag">NBA Regular Season</div><div class="ni-title">Thunder Outlast Nuggets in Double-OT Classic — Western Conference Showdown</div><div class="ni-time">Mar 22, 2026 — 7 min read</div></div>
+      </div>
+      <div class="ni">
+        <div class="ni-img"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=70" alt="Lamborghini"></div>
+        <div class="ni-body"><div class="ni-tag">Cars — First Drive</div><div class="ni-title">We Drove the Bugatti Tourbillon — It Rewrites What a Car Can Be</div><div class="ni-time">Mar 20, 2026 — 9 min read</div></div>
+      </div>
+      <div class="ni">
+        <div class="ni-img"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=400&q=70" alt="Tennis"></div>
+        <div class="ni-body"><div class="ni-tag">Miami Open</div><div class="ni-title">Sinner Demolishes Alcaraz 6-4 6-3 in Stunning 68-Minute Final</div><div class="ni-time">Mar 21, 2026 — 4 min read</div></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ATHLETES -->
+<div class="ath-section" id="athletes">
+  <div class="ath-inner">
+    <div class="sec-head">
+      <div class="sec-ttl">Athlete <em>Spotlight</em></div>
+      <a href="athletes.html" class="sec-lnk">All Athletes</a>
+    </div>
+    <div class="ath-grid">
+      <div class="ath anim">
+        <div class="ath-img">
+          <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Basketball">
+          <div class="ath-ov"></div>
+          <div class="ath-bot"><div class="ath-sport">NBA — LA Lakers</div><div class="ath-name">LeBron James</div></div>
+        </div>
+        <div class="ath-stats">
+          <div class="ath-stat"><div class="ath-sv">28.4</div><div class="ath-sk">PPG</div></div>
+          <div class="ath-stat"><div class="ath-sv">8.1</div><div class="ath-sk">RPG</div></div>
+        </div>
+      </div>
+      <div class="ath anim">
+        <div class="ath-img">
+          <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
+          <div class="ath-ov"></div>
+          <div class="ath-bot"><div class="ath-sport">F1 — Red Bull Racing</div><div class="ath-name">Max Verstappen</div></div>
+        </div>
+        <div class="ath-stats">
+          <div class="ath-stat"><div class="ath-sv">63</div><div class="ath-sk">Race Wins</div></div>
+          <div class="ath-stat"><div class="ath-sv">4x</div><div class="ath-sk">Champion</div></div>
+        </div>
+      </div>
+      <div class="ath anim">
+        <div class="ath-img">
+          <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
+          <div class="ath-ov"></div>
+          <div class="ath-bot"><div class="ath-sport">UCL — Real Madrid</div><div class="ath-name">Jude Bellingham</div></div>
+        </div>
+        <div class="ath-stats">
+          <div class="ath-stat"><div class="ath-sv">21</div><div class="ath-sk">Goals</div></div>
+          <div class="ath-stat"><div class="ath-sv">14</div><div class="ath-sk">Assists</div></div>
+        </div>
+      </div>
+      <div class="ath anim">
+        <div class="ath-img">
+          <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80" alt="Tennis">
+          <div class="ath-ov"></div>
+          <div class="ath-bot"><div class="ath-sport">Tennis — World No.1</div><div class="ath-name">Jannik Sinner</div></div>
+        </div>
+        <div class="ath-stats">
+          <div class="ath-stat"><div class="ath-sv">3</div><div class="ath-sk">Grand Slams</div></div>
+          <div class="ath-stat"><div class="ath-sv">89%</div><div class="ath-sk">Win Rate</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- NEWSLETTER -->
+<div class="newsletter-section">
+  <div class="newsletter-inner">
+    <h3>Stay In The <em>Game</em></h3>
+    <p>Get the best of Sport Variety delivered to your inbox — breaking news, race results, and car reviews every week.</p>
+    <form class="newsletter-form" onsubmit="handleNewsletter(event)">
+      <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="newsletter-msg"></div>
+  </div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

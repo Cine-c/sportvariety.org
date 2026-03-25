@@ -1,0 +1,4 @@
+# Redirect old SportsPlug URLs
+/SportsPlug.html /index.html 301
+/sportsplug.html /index.html 301
+/sportsplug /index.html 301

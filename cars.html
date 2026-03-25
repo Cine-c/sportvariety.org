@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cars & Motors — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="In-depth car reviews, hypercar comparisons, and motorsport coverage. Ferrari, Lamborghini, Porsche, and more.">
+<meta property="og:title" content="Cars & Motors — Sport Variety">
+<meta property="og:description" content="In-depth car reviews, hypercar comparisons, and motorsport coverage.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/cars.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/cars.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html" class="nav-active">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-cars">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Cars & <em>Motors</em></div>
+    <p class="page-hero-sub">Supercar reviews, track tests, EV guides, and everything that moves fast on four wheels.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Cars</div>
+
+<div class="section">
+  <div class="score-tabs">
+    <button class="stab car-filter-btn on" onclick="filterCars('all',this)">All</button>
+    <button class="stab car-filter-btn" onclick="filterCars('supercar',this)">Supercars</button>
+    <button class="stab car-filter-btn" onclick="filterCars('hypercar',this)">Hypercars</button>
+    <button class="stab car-filter-btn" onclick="filterCars('ev',this)">Electric</button>
+    <button class="stab car-filter-btn" onclick="filterCars('suv',this)">Super-SUV</button>
+  </div>
+
+  <div class="cars-page-grid">
+    <div class="car anim" data-type="supercar">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80" alt="Ferrari SF90 Stradale"></div>
+      <div class="car-info">
+        <span class="cbadge b-track">Track Test</span>
+        <div class="car-name">Ferrari SF90 Stradale</div>
+        <div class="car-desc">986 horses from a twin-turbo V8 hybrid. Maranello's most advanced road car ever — it fires to 100 km/h before your brain registers the throttle.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.8 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">986</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.5s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">340</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="hypercar">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="Lamborghini Revuelto"></div>
+      <div class="car-info">
+        <span class="cbadge b-super">Hypercar</span>
+        <div class="car-name">Lamborghini Revuelto</div>
+        <div class="car-desc">1,001hp V12 hybrid raging bull. Top Gear: "Possibly the best Lambo since the Miura." A revolutionary car that embraces the future without losing its soul.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.6 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1001</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.5s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">350</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="ev">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="Porsche Taycan Turbo GT"></div>
+      <div class="car-info">
+        <span class="cbadge b-ev">EV Track Beast</span>
+        <div class="car-name">Porsche Taycan Turbo GT</div>
+        <div class="car-desc">1,108hp and the Nurburgring production car lap record. The electric car that made combustion fans question their faith.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.5 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1108</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.2s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">305</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="supercar">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1621135802920-133df287f89c?w=800&q=80" alt="McLaren 750S"></div>
+      <div class="car-info">
+        <span class="cbadge b-track">Track Test</span>
+        <div class="car-name">McLaren 750S</div>
+        <div class="car-desc">740hp from a twin-turbo V8, weighing just 1,277kg dry. The sharpest, most focused supercar McLaren has ever made — a scalpel in a world of sledgehammers.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.4 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">740</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.7s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">332</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="hypercar">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1563720223185-11003d516935?w=800&q=80" alt="Bugatti Tourbillon"></div>
+      <div class="car-info">
+        <span class="cbadge b-super">Hypercar</span>
+        <div class="car-name">Bugatti Tourbillon</div>
+        <div class="car-desc">1,800hp from a naturally aspirated V16 plus three electric motors. The Chiron successor costs $4 million and is already sold out. Engineering art.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.9 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1800</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.0s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">445</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="suv">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1562141961-dc1ac6ff4d1f?w=800&q=80" alt="Aston Martin DBX707"></div>
+      <div class="car-info">
+        <span class="cbadge b-track">Super-SUV</span>
+        <div class="car-name">Aston Martin DBX707</div>
+        <div class="car-desc">707hp from a twin-turbo V8, making it the world's most powerful luxury SUV. It sounds like a sports car and corners like one weighing a tonne less.</div>
+        <div class="car-stars"><span class="stars">★★★★☆</span><span class="star-val">9.0 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">707</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">3.3s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">310</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="ev">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?w=800&q=80" alt="Rimac Nevera"></div>
+      <div class="car-info">
+        <span class="cbadge b-ev">EV Hypercar</span>
+        <div class="car-name">Rimac Nevera</div>
+        <div class="car-desc">1,914hp, four motors, 412 km/h top speed. The Croatian-made electric hypercar that holds 23 performance records. The future has arrived.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.7 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">1914</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">1.81s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">412</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="supercar">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=800&q=80" alt="Ferrari 296 GTB"></div>
+      <div class="car-info">
+        <span class="cbadge b-track">Track Test</span>
+        <div class="car-name">Ferrari 296 GTB</div>
+        <div class="car-desc">818hp V6 hybrid, the first Ferrari road car with a V6 since the Dino. Compact, agile, and devastatingly quick — a true Fiorano weapon.</div>
+        <div class="car-stars"><span class="stars">★★★★★</span><span class="star-val">9.3 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">818</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">2.9s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">330</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="car anim" data-type="suv">
+      <div class="car-img"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=800&q=80" alt="Lamborghini Urus SE"></div>
+      <div class="car-info">
+        <span class="cbadge b-super">Super-SUV</span>
+        <div class="car-name">Lamborghini Urus SE</div>
+        <div class="car-desc">800hp plug-in hybrid Urus. The facelifted super-SUV now gets 60km electric range, revised styling, and even more absurd performance on demand.</div>
+        <div class="car-stars"><span class="stars">★★★★☆</span><span class="star-val">8.9 / 10</span></div>
+        <div class="car-specs">
+          <div><div class="cs-val">800</div><div class="cs-key">Horsepower</div></div>
+          <div><div class="cs-val">3.4s</div><div class="cs-key">0–100 km/h</div></div>
+          <div><div class="cs-val">312</div><div class="cs-key">Top km/h</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ad-slot" style="margin-top:32px">Advertisement</div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

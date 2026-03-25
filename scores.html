@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Live Scores — Sport Variety</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Bebas+Neue&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="description" content="Real-time live scores for football, basketball, F1, NFL, and more. Stay updated with Sport Variety.">
+<meta property="og:title" content="Live Scores — Sport Variety">
+<meta property="og:description" content="Real-time live scores for football, basketball, F1, NFL, and more.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://sportvariety.org/scores.html">
+<meta property="og:image" content="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&q=80">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://sportvariety.org/scores.html">
+</head>
+<body>
+<a href="#main-content" class="skip-link">Skip to content</a>
+<nav aria-label="Main navigation">
+  <a href="index.html" class="logo">Sport Variety</a>
+  <ul class="nav-links">
+    <li><a href="scores.html" class="nav-active">Scores</a></li>
+    <li><a href="videos.html">Videos</a></li>
+    <li><a href="f1.html">F1</a></li>
+    <li><a href="cars.html">Cars</a></li>
+    <li><a href="news.html">News</a></li>
+    <li><a href="athletes.html">Athletes</a></li>
+  </ul>
+  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobile-menu">
+  <a href="scores.html" onclick="toggleMenu()">Scores</a>
+  <a href="videos.html" onclick="toggleMenu()">Videos</a>
+  <a href="f1.html" onclick="toggleMenu()">F1</a>
+  <a href="cars.html" onclick="toggleMenu()">Cars</a>
+  <a href="news.html" onclick="toggleMenu()">News</a>
+  <a href="athletes.html" onclick="toggleMenu()">Athletes</a>
+</div>
+
+<main id="main-content">
+<div class="page-hero bg-scores">
+  <div class="hero-bg"></div>
+  <div class="hero-ov"></div>
+  <div class="page-hero-body">
+    <div class="page-hero-title">Live <em>Scores</em></div>
+    <p class="page-hero-sub">Real-time scores from football, basketball, F1, NFL, tennis and more.</p>
+  </div>
+</div>
+<div class="breadcrumb"><a href="index.html">Home</a><span>/</span>Live Scores</div>
+
+<div class="section">
+  <div class="score-date-bar">
+    <button class="score-date on">Today</button>
+    <button class="score-date">Yesterday</button>
+    <button class="score-date">Mar 15</button>
+    <button class="score-date">Mar 14</button>
+    <button class="score-date">Mar 13</button>
+    <button class="score-date">Mar 12</button>
+    <button class="score-date">Mar 11</button>
+  </div>
+  <div class="score-tabs">
+    <button class="stab on" onclick="filterSc('all',this)">All</button>
+    <button class="stab" onclick="filterSc('football',this)">Football</button>
+    <button class="stab" onclick="filterSc('basketball',this)">Basketball</button>
+    <button class="stab" onclick="filterSc('f1',this)">F1</button>
+    <button class="stab" onclick="filterSc('nfl',this)">NFL</button>
+    <button class="stab" onclick="filterSc('tennis',this)">Tennis</button>
+    <button class="stab" onclick="filterSc('mma',this)">MMA</button>
+  </div>
+  <div class="scores-page-grid" id="sc-grid">
+    <div class="sc anim" data-sp="f1">
+      <div class="sc-top"><span class="sc-sport">F1 — Chinese GP Sprint</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">UCL Quarter-Final — 88'</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="basketball">
+      <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score" style="color:var(--muted);font-size:26px">109</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">Premier League</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="nfl">
+      <div class="sc-top"><span class="sc-sport">NFL Free Agency</span><span class="sc-status s-ft">DONE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Saquon Barkley — RB</span><span class="sc-score" style="font-size:18px;margin-top:4px">RB</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Philadelphia Eagles</span><span class="sc-score" style="color:var(--muted);font-size:14px">4-Year Deal</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">La Liga — Tomorrow</span><span class="sc-status s-up">UPCOMING</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Barcelona</span><span class="sc-score" style="color:var(--muted);font-size:20px">VS</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score" style="opacity:0">x</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="tennis">
+      <div class="sc-top"><span class="sc-sport">Miami Open — Final</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">J. Sinner</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="basketball">
+      <div class="sc-top"><span class="sc-sport">NBA — Eastern Conf.</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Boston Celtics</span><span class="sc-score">94</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Milwaukee Bucks</span><span class="sc-score" style="color:var(--muted);font-size:26px">88</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">UCL Quarter-Final</span><span class="sc-status s-live">LIVE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Bayern Munich</span><span class="sc-score">1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Inter Milan</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="f1">
+      <div class="sc-top"><span class="sc-sport">F1 — Chinese GP FP3</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">M. Verstappen</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">L. Norris</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="mma">
+      <div class="sc-top"><span class="sc-sport">UFC 312 — Main Event</span><span class="sc-status s-up">UPCOMING</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">I. Adesanya</span><span class="sc-score" style="color:var(--muted);font-size:20px">VS</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">D. du Plessis</span><span class="sc-score" style="opacity:0">x</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">Serie A</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">AC Milan</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Juventus</span><span class="sc-score" style="color:var(--muted);font-size:26px">2</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="tennis">
+      <div class="sc-top"><span class="sc-sport">Miami Open — SF</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">D. Medvedev</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="basketball">
+      <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-up">UPCOMING</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">LA Lakers</span><span class="sc-score" style="color:var(--muted);font-size:20px">VS</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Golden State</span><span class="sc-score" style="opacity:0">x</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="nfl">
+      <div class="sc-top"><span class="sc-sport">NFL Free Agency</span><span class="sc-status s-ft">DONE</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Derrick Henry — RB</span><span class="sc-score" style="font-size:18px;margin-top:4px">RB</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Baltimore Ravens</span><span class="sc-score" style="color:var(--muted);font-size:14px">2-Year Deal</span></div></div>
+    </div>
+    <div class="sc anim" data-sp="football">
+      <div class="sc-top"><span class="sc-sport">Bundesliga</span><span class="sc-status s-ft">FT</span></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Dortmund</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">RB Leipzig</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+    </div>
+  </div>
+  <div class="ad-slot" style="margin-top:32px">Advertisement</div>
+</div>
+
+</main>
+<footer>
+  <div class="foot-top">
+    <div>
+      <div class="foot-logo">SPORT VARIETY</div>
+      <p class="foot-p">Your home for live scores, F1 standings, hypercar reviews, and breaking sports news — where speed meets glory.</p>
+    </div>
+    <div class="foot-col"><h5>Sports</h5><ul><li><a href="scores.html">Live Scores</a></li><li><a href="news.html">News</a></li><li><a href="athletes.html">Athletes</a></li><li><a href="videos.html">Videos</a></li></ul></div>
+    <div class="foot-col"><h5>Motorsport</h5><ul><li><a href="f1.html">Formula 1</a></li><li><a href="cars.html">Car Reviews</a></li><li><a href="videos.html">Highlights</a></li></ul></div>
+    <div class="foot-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li><li><a href="privacy.html">Privacy Policy</a></li><li><a href="terms.html">Terms of Use</a></li></ul></div>
+  </div>
+  <div class="foot-bot">
+    <div class="foot-copy">2026 Sport Variety . All rights reserved.</div>
+    <div class="socials">
+      <a href="https://x.com/sportvariety" class="soc" aria-label="X (Twitter)">X</a><a href="https://linkedin.com/company/sportvariety" class="soc" aria-label="LinkedIn">in</a><a href="https://youtube.com/@sportvariety" class="soc" aria-label="YouTube">YT</a><a href="https://instagram.com/sportvariety" class="soc" aria-label="Instagram">IG</a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
