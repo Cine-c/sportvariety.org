@@ -31,7 +31,7 @@
     <li><a href="news.html">News</a></li>
     <li><a href="athletes.html">Athletes</a></li>
   </ul>
-  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <form class="nav-search" onsubmit="return doSearch(event)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="nav-search-input" placeholder="Search..." aria-label="Search site"></form><form class="nav-search" onsubmit="return doSearch(event)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="nav-search-input" placeholder="Search..." aria-label="Search site"></form><a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
@@ -76,19 +76,19 @@
   <div class="scores-page-grid" id="sc-grid">
     <div class="sc anim" data-sp="f1">
       <div class="sc-top"><span class="sc-sport">F1 — Chinese GP Sprint</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score sc-score-2">P2</span></div></div>
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">UCL Quarter-Final — 88'</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score sc-score-2">1</span></div></div>
     </div>
     <div class="sc anim" data-sp="basketball">
       <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score" style="color:var(--muted);font-size:26px">109</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score sc-score-2">109</span></div></div>
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">Premier League</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score sc-score-2">0</span></div></div>
     </div>
     <div class="sc anim" data-sp="nfl">
       <div class="sc-top"><span class="sc-sport">NFL Free Agency</span><span class="sc-status s-ft">DONE</span></div>
@@ -100,19 +100,19 @@
     </div>
     <div class="sc anim" data-sp="tennis">
       <div class="sc-top"><span class="sc-sport">Miami Open — Final</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">J. Sinner</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">J. Sinner</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score sc-score-2">0</span></div></div>
     </div>
     <div class="sc anim" data-sp="basketball">
       <div class="sc-top"><span class="sc-sport">NBA — Eastern Conf.</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Boston Celtics</span><span class="sc-score">94</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Milwaukee Bucks</span><span class="sc-score" style="color:var(--muted);font-size:26px">88</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Boston Celtics</span><span class="sc-score">94</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Milwaukee Bucks</span><span class="sc-score sc-score-2">88</span></div></div>
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">UCL Quarter-Final</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Bayern Munich</span><span class="sc-score">1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Inter Milan</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Bayern Munich</span><span class="sc-score">1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Inter Milan</span><span class="sc-score sc-score-2">1</span></div></div>
     </div>
     <div class="sc anim" data-sp="f1">
       <div class="sc-top"><span class="sc-sport">F1 — Chinese GP FP3</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">M. Verstappen</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">L. Norris</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">M. Verstappen</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">L. Norris</span><span class="sc-score sc-score-2">P2</span></div></div>
     </div>
     <div class="sc anim" data-sp="mma">
       <div class="sc-top"><span class="sc-sport">UFC 312 — Main Event</span><span class="sc-status s-up">UPCOMING</span></div>
@@ -120,11 +120,11 @@
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">Serie A</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">AC Milan</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Juventus</span><span class="sc-score" style="color:var(--muted);font-size:26px">2</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">AC Milan</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Juventus</span><span class="sc-score sc-score-2">2</span></div></div>
     </div>
     <div class="sc anim" data-sp="tennis">
       <div class="sc-top"><span class="sc-sport">Miami Open — SF</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">D. Medvedev</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">C. Alcaraz</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">D. Medvedev</span><span class="sc-score sc-score-2">1</span></div></div>
     </div>
     <div class="sc anim" data-sp="basketball">
       <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-up">UPCOMING</span></div>
@@ -136,7 +136,7 @@
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">Bundesliga</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Dortmund</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">RB Leipzig</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Dortmund</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">RB Leipzig</span><span class="sc-score sc-score-2">1</span></div></div>
     </div>
   </div>
   <div class="ad-slot" style="margin-top:32px">Advertisement</div>

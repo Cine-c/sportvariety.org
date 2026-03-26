@@ -34,7 +34,7 @@
     <li><a href="news.html">News</a></li>
     <li><a href="athletes.html">Athletes</a></li>
   </ul>
-  <a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
+  <form class="nav-search" onsubmit="return doSearch(event)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="nav-search-input" placeholder="Search..." aria-label="Search site"></form><form class="nav-search" onsubmit="return doSearch(event)"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><input type="search" id="nav-search-input" placeholder="Search..." aria-label="Search site"></form><a href="scores.html" class="live-badge"><div class="dot"></div>24 Live</a>
   <button class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobile-menu">
@@ -57,10 +57,24 @@
       <span class="tick">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span><span class="tick-sep">|</span>
       <span class="tick">Miami Open Final: Sinner def. Alcaraz 6-4 6-3 — 68 minutes</span><span class="tick-sep">|</span>
       <span class="tick">NFL Free Agency: Saquon Barkley signs 4-year deal with Philadelphia Eagles</span><span class="tick-sep">|</span>
+      <span class="tick">Premier League: Arsenal 3-0 Man United — Saka, Havertz and Rice all on the scoresheet</span><span class="tick-sep">|</span>
+      <span class="tick">Bugatti Tourbillon: V16 hypercar revealed — 1,800hp, $4M, already sold out</span><span class="tick-sep">|</span>
+      <span class="tick">MotoGP: Bagnaia wins Thai GP — leads championship heading into Jerez</span><span class="tick-sep">|</span>
+      <span class="tick">F1 2026: Ferrari unveil SF-26 with brand-new power unit — Lewis Hamilton's first race</span><span class="tick-sep">|</span>
+      <span class="tick">NBA: Boston Celtics advance to East semis — Tatum drops 38 in series clincher</span><span class="tick-sep">|</span>
+      <span class="tick">La Liga: El Clasico confirmed for April 27 at Camp Nou — Barcelona vs Real Madrid</span><span class="tick-sep">|</span>
       <span class="tick">F1 Chinese GP: Kimi Antonelli POLE — youngest pole sitter in F1 history at 18 years old</span><span class="tick-sep">|</span>
       <span class="tick">UCL QF: Real Madrid 2-1 Arsenal 88' — Bellingham header seals it!</span><span class="tick-sep">|</span>
       <span class="tick">NBA: Thunder 118-109 Nuggets 2OT — SGA drops 42 in Western Conference thriller</span><span class="tick-sep">|</span>
       <span class="tick">Lando Norris — 2025 F1 World Champion — McLaren's first title since 2008</span><span class="tick-sep">|</span>
+      <span class="tick">Miami Open Final: Sinner def. Alcaraz 6-4 6-3 — 68 minutes</span><span class="tick-sep">|</span>
+      <span class="tick">NFL Free Agency: Saquon Barkley signs 4-year deal with Philadelphia Eagles</span><span class="tick-sep">|</span>
+      <span class="tick">Premier League: Arsenal 3-0 Man United — Saka, Havertz and Rice all on the scoresheet</span><span class="tick-sep">|</span>
+      <span class="tick">Bugatti Tourbillon: V16 hypercar revealed — 1,800hp, $4M, already sold out</span><span class="tick-sep">|</span>
+      <span class="tick">MotoGP: Bagnaia wins Thai GP — leads championship heading into Jerez</span><span class="tick-sep">|</span>
+      <span class="tick">F1 2026: Ferrari unveil SF-26 with brand-new power unit — Lewis Hamilton's first race</span><span class="tick-sep">|</span>
+      <span class="tick">NBA: Boston Celtics advance to East semis — Tatum drops 38 in series clincher</span><span class="tick-sep">|</span>
+      <span class="tick">La Liga: El Clasico confirmed for April 27 at Camp Nou — Barcelona vs Real Madrid</span><span class="tick-sep">|</span>
     </div>
   </div>
 </div>
@@ -100,19 +114,19 @@
   <div class="scores-wrap" id="sc-grid">
     <div class="sc anim" data-sp="f1">
       <div class="sc-top"><span class="sc-sport">F1 — Chinese GP Sprint</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score" style="color:var(--muted);font-size:26px">P2</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">K. Antonelli</span><span class="sc-score">P1</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">G. Russell</span><span class="sc-score sc-score-2">P2</span></div></div>
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">UCL Quarter-Final — 88'</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score" style="color:var(--muted);font-size:26px">1</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Real Madrid</span><span class="sc-score">2</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score sc-score-2">1</span></div></div>
     </div>
     <div class="sc anim" data-sp="basketball">
       <div class="sc-top"><span class="sc-sport">NBA — Western Conf.</span><span class="sc-status s-live">LIVE</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score" style="color:var(--muted);font-size:26px">109</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">OKC Thunder</span><span class="sc-score">118</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Denver Nuggets</span><span class="sc-score sc-score-2">109</span></div></div>
     </div>
     <div class="sc anim" data-sp="football">
       <div class="sc-top"><span class="sc-sport">Premier League</span><span class="sc-status s-ft">FT</span></div>
-      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score" style="color:var(--muted);font-size:26px">0</span></div></div>
+      <div class="sc-teams"><div class="sc-row"><span class="sc-name">Arsenal</span><span class="sc-score">3</span></div><div class="sc-div"></div><div class="sc-row"><span class="sc-name">Man United</span><span class="sc-score sc-score-2">0</span></div></div>
     </div>
     <div class="sc anim" data-sp="nfl">
       <div class="sc-top"><span class="sc-sport">NFL Free Agency</span><span class="sc-status s-ft">DONE</span></div>
@@ -137,29 +151,25 @@
   <div class="vid-grid">
     <div>
       <div class="yt-frame">
-        <iframe id="main-iframe" src="https://www.youtube.com/embed/kGMp1Byuwto?rel=0&modestbranding=1" title="F1 2025 Italian GP Highlights" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
+        <iframe id="main-iframe" src="https://www.youtube.com/embed/8Y3IaK-rM5M?rel=0&modestbranding=1" title="Lamborghini Revuelto vs Ferrari SF90 vs Ferrari 296 Drag Race" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen></iframe>
       </div>
-      <div class="vid-tag">F1 2025 — Official Race Highlights</div>
-      <div class="vid-main-h" id="main-title">Race Highlights: 2025 Italian Grand Prix — Monza</div>
-      <p class="vid-main-p">Verstappen won from pole at the Temple of Speed ahead of Norris and Piastri. Lap record broken, penalty drama, late team orders — the full Monza story from the official F1 channel.</p>
+      <div class="vid-tag">Carwow — Drag Race</div>
+      <div class="vid-main-h" id="main-title">Revuelto vs SF90 vs Ferrari 296 — 1,000hp+ Battle</div>
+      <p class="vid-main-p">Three of the world's most extreme hypercars lined up on a drag strip. The Lamborghini Revuelto, Ferrari SF90 Stradale, and Ferrari 296 GTB — over 3,000 combined horsepower settling the argument once and for all.</p>
     </div>
     <div class="vid-list">
-      <div class="vid-item" onclick="loadVid('JIRqdeNl2cU','Race Highlights: 2025 Dutch Grand Prix — Zandvoort')">
-        <div class="vthumb"><img src="https://img.youtube.com/vi/JIRqdeNl2cU/mqdefault.jpg" alt="F1 Dutch GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
-        <div class="vmeta"><div class="vmeta-tag">Formula 1 — Official</div><h4>2025 Dutch GP Race Highlights</h4><div class="vmeta-time">Piastri wins at Zandvoort</div></div>
-      </div>
-      <div class="vid-item" onclick="loadVid('yApM21L0GgY','Race Highlights: 2025 Belgian Grand Prix — Spa')">
-        <div class="vthumb"><img src="https://img.youtube.com/vi/yApM21L0GgY/mqdefault.jpg" alt="F1 Belgian GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
-        <div class="vmeta"><div class="vmeta-tag">Formula 1 — Official</div><h4>2025 Belgian GP Race Highlights</h4><div class="vmeta-time">Piastri dominates Spa in the rain</div></div>
-      </div>
-      <div class="vid-item" onclick="loadVid('8Y3IaK-rM5M','Lamborghini Revuelto vs Ferrari SF90 vs Ferrari 296 Drag Race — Carwow')">
-        <div class="vthumb"><img src="https://img.youtube.com/vi/8Y3IaK-rM5M/mqdefault.jpg" alt="Hypercar drag race"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
-        <div class="vmeta"><div class="vmeta-tag">Carwow — Drag Race</div><h4>Revuelto vs SF90 vs Ferrari 296</h4><div class="vmeta-time">1,000hp+ hypercars battle</div></div>
-      </div>
       <div class="vid-item" onclick="loadVid('iGp1K6gen4M','McLaren 750S vs Ferrari 296 GTB: Road And Track Battle — Top Gear')">
         <div class="vthumb"><img src="https://img.youtube.com/vi/iGp1K6gen4M/mqdefault.jpg" alt="McLaren 750S"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
         <div class="vmeta"><div class="vmeta-tag">Top Gear — Review</div><h4>McLaren 750S vs Ferrari 296 — Which Wins?</h4><div class="vmeta-time">Road and track head-to-head</div></div>
       </div>
+      <a class="vid-item vid-yt-link" href="https://www.youtube.com/watch?v=kGMp1Byuwto" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/kGMp1Byuwto/mqdefault.jpg" alt="F1 Italian GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">F1 — Watch on YouTube ↗</div><h4>2025 Italian GP Race Highlights</h4><div class="vmeta-time">Verstappen wins at Monza</div></div>
+      </a>
+      <a class="vid-item vid-yt-link" href="https://www.youtube.com/watch?v=JIRqdeNl2cU" target="_blank" rel="noopener">
+        <div class="vthumb"><img src="https://img.youtube.com/vi/JIRqdeNl2cU/mqdefault.jpg" alt="F1 Dutch GP"><div class="vplay"><div class="vplay-btn"><div class="play-tri"></div></div></div></div>
+        <div class="vmeta"><div class="vmeta-tag">F1 — Watch on YouTube ↗</div><h4>2025 Dutch GP Race Highlights</h4><div class="vmeta-time">Piastri wins at Zandvoort</div></div>
+      </a>
     </div>
   </div>
 </div>
@@ -312,22 +322,22 @@
       </div>
     </div>
     <div class="news-list">
-      <div class="ni">
+      <a class="ni" href="article-antonelli-pole.html" style="text-decoration:none;color:var(--text)">
         <div class="ni-img"><img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=400&q=70" alt="F1"></div>
         <div class="ni-body"><div class="ni-tag">Formula 1</div><div class="ni-title">Kimi Antonelli Claims Historic Pole — Youngest Ever in F1 History at 18</div><div class="ni-time">Mar 22, 2026 — 6 min read</div></div>
-      </div>
-      <div class="ni">
+      </a>
+      <a class="ni" href="article-thunder-nuggets.html" style="text-decoration:none;color:var(--text)">
         <div class="ni-img"><img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=400&q=70" alt="NBA Basketball"></div>
         <div class="ni-body"><div class="ni-tag">NBA Regular Season</div><div class="ni-title">Thunder Outlast Nuggets in Double-OT Classic — Western Conference Showdown</div><div class="ni-time">Mar 22, 2026 — 7 min read</div></div>
-      </div>
-      <div class="ni">
+      </a>
+      <a class="ni" href="article-bugatti-tourbillon.html" style="text-decoration:none;color:var(--text)">
         <div class="ni-img"><img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?w=400&q=70" alt="Lamborghini"></div>
         <div class="ni-body"><div class="ni-tag">Cars — First Drive</div><div class="ni-title">We Drove the Bugatti Tourbillon — It Rewrites What a Car Can Be</div><div class="ni-time">Mar 20, 2026 — 9 min read</div></div>
-      </div>
-      <div class="ni">
+      </a>
+      <a class="ni" href="news.html" style="text-decoration:none;color:var(--text)">
         <div class="ni-img"><img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=400&q=70" alt="Tennis"></div>
         <div class="ni-body"><div class="ni-tag">Miami Open</div><div class="ni-title">Sinner Demolishes Alcaraz 6-4 6-3 in Stunning 68-Minute Final</div><div class="ni-time">Mar 21, 2026 — 4 min read</div></div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -340,7 +350,7 @@
       <a href="athletes.html" class="sec-lnk">All Athletes</a>
     </div>
     <div class="ath-grid">
-      <div class="ath anim">
+      <a class="ath anim" href="athletes.html" style="text-decoration:none;color:var(--text)">
         <div class="ath-img">
           <img src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=600&q=80" alt="Basketball">
           <div class="ath-ov"></div>
@@ -350,8 +360,8 @@
           <div class="ath-stat"><div class="ath-sv">28.4</div><div class="ath-sk">PPG</div></div>
           <div class="ath-stat"><div class="ath-sv">8.1</div><div class="ath-sk">RPG</div></div>
         </div>
-      </div>
-      <div class="ath anim">
+      </a>
+      <a class="ath anim" href="athletes.html" style="text-decoration:none;color:var(--text)">
         <div class="ath-img">
           <img src="https://images.unsplash.com/photo-1541773367477-8de59db53c52?w=600&q=80" alt="F1">
           <div class="ath-ov"></div>
@@ -361,8 +371,8 @@
           <div class="ath-stat"><div class="ath-sv">63</div><div class="ath-sk">Race Wins</div></div>
           <div class="ath-stat"><div class="ath-sv">4x</div><div class="ath-sk">Champion</div></div>
         </div>
-      </div>
-      <div class="ath anim">
+      </a>
+      <a class="ath anim" href="athletes.html" style="text-decoration:none;color:var(--text)">
         <div class="ath-img">
           <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=600&q=80" alt="Football">
           <div class="ath-ov"></div>
@@ -372,8 +382,8 @@
           <div class="ath-stat"><div class="ath-sv">21</div><div class="ath-sk">Goals</div></div>
           <div class="ath-stat"><div class="ath-sv">14</div><div class="ath-sk">Assists</div></div>
         </div>
-      </div>
-      <div class="ath anim">
+      </a>
+      <a class="ath anim" href="athletes.html" style="text-decoration:none;color:var(--text)">
         <div class="ath-img">
           <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=600&q=80" alt="Tennis">
           <div class="ath-ov"></div>
@@ -383,7 +393,7 @@
           <div class="ath-stat"><div class="ath-sv">3</div><div class="ath-sk">Grand Slams</div></div>
           <div class="ath-stat"><div class="ath-sv">89%</div><div class="ath-sk">Win Rate</div></div>
         </div>
-      </div>
+      </a>
     </div>
   </div>
 </div>
@@ -392,10 +402,10 @@
 <div class="newsletter-section">
   <div class="newsletter-inner">
     <h3>Stay In The <em>Game</em></h3>
-    <p>Get the best of Sport Variety delivered to your inbox — breaking news, race results, and car reviews every week.</p>
+    <p>Every Friday: F1 race preview + the week's best car review + top 5 sports stories — handpicked, zero filler. Join 4,200+ readers.</p>
     <form class="newsletter-form" onsubmit="handleNewsletter(event)">
       <input type="email" placeholder="Your email address" required aria-label="Email for newsletter">
-      <button type="submit">Subscribe</button>
+      <button type="submit">Get Free Weekly Digest</button>
     </form>
     <div class="newsletter-msg"></div>
   </div>

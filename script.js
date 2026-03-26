@@ -1,3 +1,42 @@
+/* ========== SEARCH ========== */
+function doSearch(e){
+  e.preventDefault();
+  var q=(document.getElementById('nav-search-input')||{}).value||'';
+  q=q.trim().toLowerCase();
+  if(!q)return false;
+  var searchable=[
+    {sel:'.news-card',textSel:'.news-card-title,.news-card-tag'},
+    {sel:'.ath',textSel:'.ath-name,.ath-sport'},
+    {sel:'.car',textSel:'.car-name,.car-desc'},
+    {sel:'.vid-card',textSel:'h4,.vmeta-tag'},
+    {sel:'.sc',textSel:'.sc-name,.sc-sport'},
+    {sel:'.ni',textSel:'.ni-title,.ni-tag'},
+    {sel:'.news-item',textSel:'h3,.nm-tag'}
+  ];
+  var found=0;
+  searchable.forEach(function(s){
+    document.querySelectorAll(s.sel).forEach(function(el){
+      var text='';
+      el.querySelectorAll(s.textSel.split(',').join(',')).forEach(function(t){text+=t.textContent+' ';});
+      text=text.toLowerCase();
+      var show=text.includes(q);
+      el.style.display=show?'':'none';
+      if(show)found++;
+    });
+  });
+  return false;
+}
+/* Clear search filter when input is empty */
+(function(){
+  document.addEventListener('input',function(e){
+    if(e.target&&e.target.id==='nav-search-input'&&!e.target.value){
+      ['.news-card','.ath','.car','.vid-card','.sc','.ni'].forEach(function(sel){
+        document.querySelectorAll(sel).forEach(function(el){el.style.display='';});
+      });
+    }
+  });
+})();
+
 function filterSc(sp,btn){
   document.querySelectorAll('.stab').forEach(b=>b.classList.remove('on'));
   btn.classList.add('on');
