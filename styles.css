@@ -75,7 +75,7 @@ h1 em{font-style:normal;color:var(--accent)}
 .sc-row{display:flex;justify-content:space-between;align-items:center}
 .sc-name{font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700}
 .sc-score{font-family:'Bebas Neue',sans-serif;font-size:32px;color:var(--accent)}
-.sc-score-2{color:rgba(255,255,255,.72)!important;font-size:26px!important}
+.sc-score-2{color:rgba(255,255,255,.92)!important;font-size:28px!important}
 .sc-div{height:1px;background:var(--border);margin:2px 0}
 .vid-grid{display:grid;grid-template-columns:2fr 1fr;gap:20px}
 .yt-frame{width:100%;aspect-ratio:16/9;border-radius:10px;overflow:hidden;border:1px solid var(--border)}
