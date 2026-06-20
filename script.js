@@ -171,13 +171,87 @@ document.addEventListener('keydown',function(e){
   });
 })();
 
+/* ========== TRENDING FEED (ESPN) ========== */
+(function(){
+  var el=document.getElementById('trending-feed');
+  if(!el)return;
+  var cached=sessionStorage.getItem('sv-trending');
+  if(cached){try{renderTrending(JSON.parse(cached),el);return}catch(e){}}
+  fetch('https://site.api.espn.com/apis/site/v2/sports/football/eng.1/news?limit=6')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      if(data.articles){sessionStorage.setItem('sv-trending',JSON.stringify(data.articles));renderTrending(data.articles,el)}
+    })
+    .catch(function(){el.closest('.section').style.display='none'});
+  function renderTrending(articles,container){
+    container.innerHTML=articles.map(function(a){
+      var url=(a.links&&a.links.web&&a.links.web.href)||'#';
+      var time=a.published?new Date(a.published).toLocaleDateString('en-US',{month:'short',day:'numeric',year:'numeric'}):'';
+      return '<a class="trending-card" href="'+url+'" target="_blank" rel="noopener">'
+        +'<div class="trending-source">ESPN</div>'
+        +'<div class="trending-headline">'+a.headline+'</div>'
+        +(a.description?'<div class="trending-desc">'+a.description+'</div>':'')
+        +'<div class="trending-time">'+time+'</div>'
+        +'</a>';
+    }).join('');
+  }
+})();
+
+/* ========== CHANGELOG WIDGET ========== */
+(function(){
+  var el=document.getElementById('changelog-list');
+  if(!el)return;
+  fetch('content-report.json')
+    .then(function(r){return r.json()})
+    .then(function(data){
+      if(!data.articles||!data.articles.length){el.closest('.section').style.display='none';return}
+      var sorted=data.articles.filter(function(a){return a.datePublished}).sort(function(a,b){return b.datePublished.localeCompare(a.datePublished)}).slice(0,5);
+      el.innerHTML=sorted.map(function(a){
+        var badge=a.status==='new'?'badge-new':a.status==='modified'?'badge-updated':'badge-unchanged';
+        var label=a.status==='new'?'NEW':a.status==='modified'?'UPDATED':'';
+        return '<div class="changelog-item">'
+          +(label?'<span class="changelog-badge '+badge+'">'+label+'</span>':'')
+          +'<div class="changelog-item-body">'
+          +'<div class="changelog-item-title"><a href="'+a.file+'">'+a.title+'</a></div>'
+          +'<div class="changelog-item-meta">'
+          +(a.author?'<span>By '+a.author+'</span>':'')
+          +(a.datePublished?'<span>'+a.datePublished+'</span>':'')
+          +(a.wordCount?'<span>'+a.wordCount+' words</span>':'')
+          +'</div></div></div>';
+      }).join('');
+    })
+    .catch(function(){el.closest('.section').style.display='none'});
+})();
+
 /* ========== NEWSLETTER SIGNUP ========== */
 function handleNewsletter(e){
   e.preventDefault();
   var input=e.target.querySelector('input');
+  var btn=e.target.querySelector('button');
   var msg=document.querySelector('.newsletter-msg');
-  if(input&&input.value){
-    input.value='';
-    if(msg){msg.style.display='block';msg.textContent='Thanks for subscribing! We\'ll keep you posted.';}
-  }
+  if(!input||!input.value)return;
+  var email=input.value;
+  btn.textContent='Subscribing...';
+  btn.style.opacity='0.6';
+  btn.style.pointerEvents='none';
+  fetch('https://formspree.io/f/'+FORMSPREE_ID,{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({email:email,_subject:'Newsletter Signup — Sport Variety'})
+  }).then(function(r){
+    btn.textContent='Get Free Weekly Digest';
+    btn.style.opacity='';
+    btn.style.pointerEvents='';
+    if(r.ok){
+      input.value='';
+      if(msg){msg.style.color='var(--green)';msg.style.display='block';msg.textContent="You're in! Check your inbox every Friday.";}
+    } else {
+      if(msg){msg.style.color='var(--red)';msg.style.display='block';msg.textContent='Something went wrong — please try again.';}
+    }
+  }).catch(function(){
+    btn.textContent='Get Free Weekly Digest';
+    btn.style.opacity='';
+    btn.style.pointerEvents='';
+    if(msg){msg.style.color='var(--red)';msg.style.display='block';msg.textContent='Network error — please try again.';}
+  });
 }
