@@ -255,3 +255,141 @@ function handleNewsletter(e){
     if(msg){msg.style.color='var(--red)';msg.style.display='block';msg.textContent='Network error — please try again.';}
   });
 }
+
+/* ========== LIVE SCORES WIDGET ========== */
+(function(){
+  var grid=document.getElementById('sc-grid');
+  if(!grid)return;
+  var SPORTS=[
+    {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard',sp:'football',league:'World Cup 2026'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/scoreboard',sp:'basketball',league:'NBA'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/scoreboard',sp:'football',league:'Premier League'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard',sp:'football',league:'La Liga'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard',sp:'football',league:'UCL'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',sp:'nfl',league:'NFL'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/tennis/scoreboard',sp:'tennis',league:'Tennis'},
+    {url:'https://site.api.espn.com/apis/site/v2/sports/racing/f1/scoreboard',sp:'f1',league:'Formula 1'},
+  ];
+  var ORDER={STATUS_IN_PROGRESS:0,STATUS_FINAL:1,STATUS_SCHEDULED:2};
+  function getStatus(ev){
+    var comp=ev.competitions&&ev.competitions[0];
+    return comp&&comp.status&&comp.status.type&&comp.status.type.name||'STATUS_SCHEDULED';
+  }
+  function render(allItems){
+    var cards=[];
+    allItems.forEach(function(item){
+      var comp=item.ev.competitions&&item.ev.competitions[0];
+      if(!comp||!comp.competitors||comp.competitors.length<2)return;
+      var home=comp.competitors.find(function(c){return c.homeAway==='home';})||comp.competitors[0];
+      var away=comp.competitors.find(function(c){return c.homeAway==='away';})||comp.competitors[1];
+      var sName=getStatus(item.ev);
+      var detail=item.ev.status&&item.ev.status.type&&item.ev.status.type.shortDetail||'';
+      var sCls=sName==='STATUS_IN_PROGRESS'?'s-live':sName==='STATUS_FINAL'?'s-ft':'s-up';
+      var sLbl=sName==='STATUS_IN_PROGRESS'?'LIVE':sName==='STATUS_FINAL'?'FT':'UPCOMING';
+      var sportLbl=item.league+(sName==='STATUS_IN_PROGRESS'&&detail?' — '+detail:'');
+      var isUp=sName==='STATUS_SCHEDULED';
+      var isLive=sName==='STATUS_IN_PROGRESS';
+      cards.push('<div class="sc" data-sp="'+item.sp+'">'
+        +'<div class="sc-top"><span class="sc-sport">'+sportLbl+'</span>'
+        +'<span class="sc-status '+sCls+'">'+sLbl+'</span></div>'
+        +'<div class="sc-teams">'
+        +'<div class="sc-row"><span class="sc-name">'+home.team.displayName+'</span>'
+        +(isUp?'<span class="sc-score" style="color:var(--muted);font-size:20px">VS</span>'
+             :'<span class="sc-score'+(isLive?'':' sc-score-2')+'">'+(home.score||'0')+'</span>')
+        +'</div><div class="sc-div"></div>'
+        +'<div class="sc-row"><span class="sc-name">'+away.team.displayName+'</span>'
+        +(isUp?'<span class="sc-score" style="opacity:0">x</span>'
+             :'<span class="sc-score sc-score-2">'+(away.score||'0')+'</span>')
+        +'</div></div></div>');
+    });
+    if(cards.length){
+      grid.innerHTML=cards.slice(0,6).join('');
+    } else {
+      grid.innerHTML='<div style="color:var(--muted);font-family:\'Barlow Condensed\',sans-serif;'
+        +'letter-spacing:2px;text-transform:uppercase;font-size:12px;padding:30px;'
+        +'grid-column:1/-1;text-align:center">No live games right now — check back soon</div>';
+    }
+  }
+  function fetchAll(){
+    Promise.all(SPORTS.map(function(s){
+      return fetch(s.url)
+        .then(function(r){return r.json();})
+        .then(function(d){return(d.events||[]).map(function(ev){return{ev:ev,sp:s.sp,league:s.league};});})
+        .catch(function(){return[];});
+    })).then(function(all){
+      var flat=[];
+      all.forEach(function(a){flat=flat.concat(a);});
+      flat.sort(function(a,b){return(ORDER[getStatus(a.ev)]||99)-(ORDER[getStatus(b.ev)]||99);});
+      render(flat);
+    });
+  }
+  fetchAll();
+  setInterval(fetchAll,60000);
+})();
+
+/* ========== LIVE TICKER ========== */
+(function(){
+  var wrap=document.querySelector('.ticker-items');
+  if(!wrap)return;
+  var FEEDS=[
+    'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=5',
+    'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=5',
+    'https://site.api.espn.com/apis/site/v2/sports/football/eng.1/news?limit=4',
+    'https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=3',
+  ];
+  Promise.all(FEEDS.map(function(url){
+    return fetch(url)
+      .then(function(r){return r.json();})
+      .then(function(d){return d.articles||[];})
+      .catch(function(){return[];});
+  })).then(function(all){
+    var headlines=[];
+    all.forEach(function(articles){
+      articles.forEach(function(a){if(a.headline)headlines.push(a.headline);});
+    });
+    if(headlines.length<4)return;
+    var items=headlines.slice(0,14);
+    var html=[].concat(items,items).map(function(h){
+      return'<span class="tick">'+h+'</span><span class="tick-sep">|</span>';
+    }).join('');
+    wrap.style.animation='none';
+    wrap.offsetHeight;
+    wrap.innerHTML=html;
+    wrap.style.animation='';
+  }).catch(function(){});
+})();
+
+/* ========== F1 STANDINGS (Jolpi/Ergast API) ========== */
+(function(){
+  var stand=document.getElementById('f1-standings');
+  if(!stand)return;
+  var COLORS={
+    'Mercedes':'#27F4D2','Red Bull':'#3671C6','McLaren':'#FF8000','Ferrari':'#E8002D',
+    'Aston Martin':'#358C75','Alpine':'#FF87BC','Williams':'#64C4FF',
+    'Haas F1 Team':'#B6BABD','Haas':'#B6BABD',
+    'Sauber':'#00E48F','Kick Sauber':'#00E48F','Audi':'#C00000',
+    'RB':'#6692FF','Racing Bulls':'#6692FF','Visa Cash App RB':'#6692FF','VCARB':'#6692FF',
+  };
+  var PC={1:'p1',2:'p2',3:'p3'};
+  fetch('https://api.jolpi.ca/ergast/f1/current/driverStandings.json')
+    .then(function(r){return r.json();})
+    .then(function(data){
+      var lists=data.MRData&&data.MRData.StandingsTable&&data.MRData.StandingsTable.StandingsLists;
+      if(!lists||!lists.length)return;
+      var list=lists[0];
+      var hd='<div class="stand-hd">'+list.season+' Drivers Championship — Rnd '+list.round+'</div>';
+      var rows=list.DriverStandings.slice(0,10).map(function(s){
+        var pos=parseInt(s.position);
+        var con=s.Constructors&&s.Constructors[0];
+        var team=con?con.name:'';
+        var col=COLORS[team]||'#888';
+        return'<div class="srow">'
+          +'<div class="spos'+(PC[pos]?' '+PC[pos]:'')+'">'+pos+'</div>'
+          +'<div><div class="sdrv-n">'+s.Driver.givenName+' '+s.Driver.familyName+'</div>'
+          +'<div class="sdrv-t"><span class="tdot" style="background:'+col+'"></span>'+team+'</div></div>'
+          +'<div class="spts">'+s.points+'</div>'
+          +'<div class="schg same">—</div></div>';
+      }).join('');
+      stand.innerHTML=hd+rows;
+    }).catch(function(){});
+})();
