@@ -177,7 +177,7 @@ document.addEventListener('keydown',function(e){
   if(!el)return;
   var cached=sessionStorage.getItem('sv-trending');
   if(cached){try{renderTrending(JSON.parse(cached),el);return}catch(e){}}
-  fetch('https://site.api.espn.com/apis/site/v2/sports/football/eng.1/news?limit=6')
+  fetch('https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news?limit=6')
     .then(function(r){return r.json()})
     .then(function(data){
       if(data.articles){sessionStorage.setItem('sv-trending',JSON.stringify(data.articles));renderTrending(data.articles,el)}
@@ -267,10 +267,13 @@ function handleNewsletter(e){
     {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/esp.1/scoreboard',sp:'football',league:'La Liga'},
     {url:'https://site.api.espn.com/apis/site/v2/sports/soccer/uefa.champions/scoreboard',sp:'football',league:'UCL'},
     {url:'https://site.api.espn.com/apis/site/v2/sports/football/nfl/scoreboard',sp:'nfl',league:'NFL'},
-    {url:'https://site.api.espn.com/apis/site/v2/sports/tennis/scoreboard',sp:'tennis',league:'Tennis'},
     {url:'https://site.api.espn.com/apis/site/v2/sports/racing/f1/scoreboard',sp:'f1',league:'Formula 1'},
   ];
-  var ORDER={STATUS_IN_PROGRESS:0,STATUS_FINAL:1,STATUS_SCHEDULED:2};
+  var LIVE_ST=['STATUS_IN_PROGRESS','STATUS_HALFTIME','STATUS_EXTRA_TIME','STATUS_PENALTIES'];
+  var FT_ST=['STATUS_FINAL','STATUS_FULL_TIME','STATUS_FINAL_PEN','STATUS_FULL_TIME_OT'];
+  var ORDER={STATUS_IN_PROGRESS:0,STATUS_HALFTIME:0,STATUS_EXTRA_TIME:0,STATUS_PENALTIES:0,
+    STATUS_FINAL:1,STATUS_FULL_TIME:1,STATUS_FINAL_PEN:1,STATUS_FULL_TIME_OT:1,
+    STATUS_SCHEDULED:2,STATUS_POSTPONED:2,STATUS_CANCELED:2};
   function getStatus(ev){
     var comp=ev.competitions&&ev.competitions[0];
     return comp&&comp.status&&comp.status.type&&comp.status.type.name||'STATUS_SCHEDULED';
@@ -283,12 +286,13 @@ function handleNewsletter(e){
       var home=comp.competitors.find(function(c){return c.homeAway==='home';})||comp.competitors[0];
       var away=comp.competitors.find(function(c){return c.homeAway==='away';})||comp.competitors[1];
       var sName=getStatus(item.ev);
-      var detail=item.ev.status&&item.ev.status.type&&item.ev.status.type.shortDetail||'';
-      var sCls=sName==='STATUS_IN_PROGRESS'?'s-live':sName==='STATUS_FINAL'?'s-ft':'s-up';
-      var sLbl=sName==='STATUS_IN_PROGRESS'?'LIVE':sName==='STATUS_FINAL'?'FT':'UPCOMING';
-      var sportLbl=item.league+(sName==='STATUS_IN_PROGRESS'&&detail?' — '+detail:'');
-      var isUp=sName==='STATUS_SCHEDULED';
-      var isLive=sName==='STATUS_IN_PROGRESS';
+      var detail=comp.status&&comp.status.type&&comp.status.type.shortDetail||'';
+      var isLive=LIVE_ST.indexOf(sName)>-1;
+      var isFt=FT_ST.indexOf(sName)>-1;
+      var sCls=isLive?'s-live':isFt?'s-ft':'s-up';
+      var sLbl=sName==='STATUS_HALFTIME'?'HT':isLive?'LIVE':isFt?'FT':'UPCOMING';
+      var sportLbl=item.league+(isLive&&detail?' — '+detail:'');
+      var isUp=!isLive&&!isFt;
       cards.push('<div class="sc" data-sp="'+item.sp+'">'
         +'<div class="sc-top"><span class="sc-sport">'+sportLbl+'</span>'
         +'<span class="sc-status '+sCls+'">'+sLbl+'</span></div>'
@@ -334,7 +338,7 @@ function handleNewsletter(e){
   var FEEDS=[
     'https://site.api.espn.com/apis/site/v2/sports/basketball/nba/news?limit=5',
     'https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/news?limit=5',
-    'https://site.api.espn.com/apis/site/v2/sports/football/eng.1/news?limit=4',
+    'https://site.api.espn.com/apis/site/v2/sports/soccer/eng.1/news?limit=4',
     'https://site.api.espn.com/apis/site/v2/sports/football/nfl/news?limit=3',
   ];
   Promise.all(FEEDS.map(function(url){
